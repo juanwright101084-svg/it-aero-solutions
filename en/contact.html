@@ -1,0 +1,1291 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Command Center - Marconi IT & Aerospace Solutions</title>
+  <link rel="icon" href="images/favicon.png" type="image/gif">
+  
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <!-- AOS Animation -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- Google Fonts - Cambiado a Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CALENDLY CSS - CORRECTED -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-dark: #000000;
+      --secondary-dark: #0a0a0a;
+      --accent-blue: #00d4ff;
+      --accent-orange: #ff6b35;
+      --text-light: #ffffff;
+      --text-muted: #a0a0a0;
+      --border-color: #1a1a1a;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* CORRECCIONES CRÍTICAS PARA MÓVILES */
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    
+    body {
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 14px; /* Tamaño base reducido */
+      background: var(--primary-dark);
+      color: var(--text-light);
+      overflow-x: hidden;
+      padding-top: 140px; /* Space for fixed header - Reducido */
+    }
+    
+    /* Contenedores principales - CORREGIDO PARA MÓVILES */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* Logo Container - Más compacto */
+    .logo-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 2000;
+      padding: 1rem 0; /* Reducido */
+      min-height: 120px; /* Reducido */
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      width: 100%;
+    }
+    
+    .logo-img {
+      height: 100px; /* Reducido */
+      margin-right: 2rem; /* Reducido */
+      transition: transform 0.3s ease;
+      max-width: 100%;
+    }
+    
+    .logo-img:hover {
+      transform: scale(1.05);
+    }
+    
+    .logo-slogan {
+      font-size: 0.9rem; /* Reducido */
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      letter-spacing: 1.5px; /* Reducido */
+      font-weight: 400;
+      line-height: 1.4;
+      max-width: 800px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* Modern Navbar - Más compacta */
+    .modern-navbar {
+      background: rgba(0, 0, 0, 0.98);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 0.8rem 0; /* Reducido */
+      position: fixed;
+      width: 100%;
+      top: 120px; /* Below header - Ajustado */
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .modern-navbar.scrolled {
+      padding: 0.4rem 0; /* Reducido */
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link {
+      color: var(--text-light) !important;
+      font-weight: 500;
+      font-size: 0.85rem; /* Reducido */
+      padding: 0.4rem 1rem !important; /* Reducido */
+      transition: all 0.3s ease;
+      position: relative;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--text-light);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 80%;
+    }
+    
+    .nav-link:hover {
+      color: var(--text-light) !important;
+    }
+    
+    .lang-btn {
+      margin-left: 0.5rem;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    
+    .lang-btn:hover {
+      opacity: 1;
+    }
+    
+    /* Hero Section for Contact - Más compacto */
+    .contact-hero {
+      position: relative;
+      height: 45vh; /* Reducido */
+      display: flex;
+      align-items: center;
+      margin-top: 50px; /* Reducido */
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.95) 100%);
+      width: 100%;
+    }
+    
+    .contact-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+    
+    .contact-hero-title {
+      font-size: clamp(2rem, 4vw, 3rem); /* Reducido */
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 1rem; /* Reducido */
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1.5px; /* Reducido */
+      word-wrap: break-word;
+    }
+    
+    .contact-hero-subtitle {
+      font-size: clamp(0.95rem, 1.8vw, 1.2rem); /* Reducido */
+      color: var(--text-muted);
+      margin-bottom: 2rem; /* Reducido */
+      max-width: 600px;
+      font-family: 'Montserrat', sans-serif;
+      word-wrap: break-word;
+    }
+    
+    /* Contact Section - Más compacto */
+    .contact-section {
+      padding: 4rem 0; /* Reducido */
+      background: var(--primary-dark);
+      width: 100%;
+    }
+    
+    .contact-container {
+      background: var(--secondary-dark);
+      border-radius: 15px; /* Reducido */
+      padding: 2.5rem; /* Reducido */
+      border: 1px solid var(--border-color);
+      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.05); /* Reducido */
+      width: 100%;
+    }
+    
+    .contact-info {
+      padding-right: 1.5rem; /* Reducido */
+    }
+    
+    .contact-method {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem; /* Reducido */
+      padding: 1.2rem; /* Reducido */
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px; /* Reducido */
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    
+    .contact-method:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-3px); /* Reducido */
+    }
+    
+    .contact-icon {
+      width: 50px; /* Reducido */
+      height: 50px; /* Reducido */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      font-size: 1.3rem; /* Reducido */
+      color: var(--accent-blue);
+      margin-right: 1.2rem; /* Reducido */
+      flex-shrink: 0;
+    }
+    
+    .contact-details h4 {
+      font-size: 1.1rem; /* Reducido */
+      font-weight: 600;
+      margin-bottom: 0.4rem; /* Reducido */
+      color: var(--text-light);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .contact-details p {
+      color: var(--text-muted);
+      margin-bottom: 0.4rem; /* Reducido */
+      font-size: 0.85rem; /* Reducido */
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .contact-details a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 0.85rem; /* Reducido */
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .contact-details a:hover {
+      color: var(--text-light);
+    }
+    
+    /* Form Styles - Más compactos */
+    .form-container {
+      padding-left: 1.5rem; /* Reducido */
+    }
+    
+    .form-title {
+      font-size: 1.5rem; /* Reducido */
+      font-weight: 700;
+      margin-bottom: 1.2rem; /* Reducido */
+      color: var(--text-light);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .contact-form {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px; /* Reducido */
+      padding: 1.8rem; /* Reducido */
+      width: 100%;
+    }
+    
+    .form-group {
+      margin-bottom: 1.2rem; /* Reducido */
+    }
+    
+    .form-label {
+      color: var(--text-light);
+      font-weight: 500;
+      margin-bottom: 0.4rem; /* Reducido */
+      font-size: 0.9rem; /* Reducido */
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .form-control {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border-color);
+      border-radius: 8px; /* Reducido */
+      color: var(--text-light);
+      padding: 0.7rem 0.9rem; /* Reducido */
+      transition: all 0.3s ease;
+      font-size: 0.85rem; /* Reducido */
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .form-control:focus {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 0.2rem rgba(0, 212, 255, 0.25);
+      color: var(--text-light);
+    }
+    
+    .form-control::placeholder {
+      color: var(--text-muted);
+      font-size: 0.85rem; /* Reducido */
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    textarea.form-control {
+      resize: vertical;
+      min-height: 100px; /* Reducido */
+    }
+    
+    /* Modernized Buttons - Más compactos */
+    .btn-modern {
+      padding: 0.7rem 1.5rem; /* Reducido */
+      font-size: 0.85rem; /* Reducido */
+      font-weight: 600;
+      border-radius: 50px;
+      border: 2px solid var(--text-light);
+      background: #000000;
+      color: var(--text-light);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.8rem; /* Reducido */
+      margin-bottom: 0.4rem; /* Reducido */
+      min-height: 44px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .btn-modern:hover {
+      background: var(--accent-orange);
+      color: var(--text-light);
+      border-color: var(--accent-orange);
+      transform: translateY(-2px); /* Reducido */
+      box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3); /* Reducido */
+    }
+    
+    .btn-modern.outline {
+      background: transparent;
+      color: var(--text-light);
+      border-color: var(--text-light);
+    }
+    
+    .btn-modern.outline:hover {
+      background: var(--accent-orange);
+      color: var(--text-light);
+      border-color: var(--accent-orange);
+    }
+    
+    .btn-primary {
+      background: #000000 !important;
+      color: var(--text-light) !important;
+      border: 2px solid var(--text-light) !important;
+      border-radius: 50px !important;
+      padding: 0.7rem 1.5rem !important; /* Reducido */
+      font-weight: 600 !important;
+      transition: all 0.3s ease !important;
+      font-size: 0.85rem; /* Reducido */
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .btn-primary:hover {
+      background: var(--accent-orange) !important;
+      color: var(--text-light) !important;
+      border-color: var(--accent-orange) !important;
+      transform: translateY(-2px); /* Reducido */
+      box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3); /* Reducido */
+    }
+    
+    /* Success Message */
+    .success-message {
+      display: none;
+      background: rgba(0, 255, 0, 0.1);
+      border: 1px solid rgba(0, 255, 0, 0.3);
+      border-radius: 8px; /* Reducido */
+      padding: 1.2rem; /* Reducido */
+      margin-top: 1.5rem; /* Reducido */
+      text-align: center;
+      color: #00ff00;
+      animation: fadeIn 0.5s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Map Section - Más compacto */
+    .map-section {
+      padding: 0 0 4rem; /* Reducido */
+      background: var(--primary-dark);
+      width: 100%;
+    }
+    
+    .map-container {
+      border-radius: 15px; /* Reducido */
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8); /* Reducido */
+      height: 350px; /* Reducido */
+      width: 100%;
+    }
+    
+    /* Modernized Footer - Más compacto */
+    .modern-footer {
+      background: var(--primary-dark);
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 0 1.5rem; /* Reducido */
+      width: 100%;
+    }
+    
+    .footer-title {
+      font-size: 1.1rem; /* Reducido */
+      font-weight: 700;
+      margin-bottom: 1.2rem; /* Reducido */
+      color: var(--text-light);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .footer-link {
+      display: block;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 0.6rem; /* Reducido */
+      transition: all 0.3s ease;
+      font-size: 0.85rem; /* Reducido */
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .footer-link:hover {
+      color: var(--accent-blue);
+      padding-left: 5px;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; /* Reducido */
+      height: 40px; /* Reducido */
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-light);
+      margin-right: 0.6rem; /* Reducido */
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .social-links a:hover {
+      background: var(--text-light);
+      color: var(--primary-dark);
+      transform: translateY(-2px); /* Reducido */
+    }
+    
+    .footer-bottom {
+      margin-top: 2.5rem; /* Reducido */
+      padding-top: 1.5rem; /* Reducido */
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem; /* Reducido */
+      padding: 0 15px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* Ajustes específicos para pantallas grandes */
+    @media (min-width: 1400px) {
+      .container {
+        max-width: 1320px;
+      }
+    }
+    
+    /* Ajustes para pantallas medianas */
+    @media (max-width: 1200px) {
+      .container {
+        max-width: 1140px;
+      }
+      
+      .logo-img {
+        height: 90px; /* Reducido */
+        margin-right: 1.8rem; /* Reducido */
+      }
+      
+      .logo-slogan {
+        font-size: 0.85rem; /* Reducido */
+      }
+      
+      body {
+        padding-top: 130px; /* Reducido */
+      }
+      
+      .modern-navbar {
+        top: 130px; /* Ajustado */
+      }
+      
+      .logo-header {
+        padding: 0.9rem 0; /* Reducido */
+        min-height: 130px; /* Reducido */
+      }
+    }
+    
+    /* CORRECCIONES ESPECÍFICAS PARA MÓVILES */
+    
+    @media (max-width: 991px) {
+      .container {
+        max-width: 960px;
+      }
+      
+      .logo-img {
+        height: 85px; /* Reducido */
+        margin-right: 1.5rem; /* Reducido */
+      }
+      
+      .logo-slogan {
+        font-size: 0.8rem; /* Reducido */
+      }
+      
+      body {
+        padding-top: 120px; /* Reducido */
+      }
+      
+      .modern-navbar {
+        top: 120px; /* Ajustado */
+      }
+      
+      .logo-header {
+        padding: 0.8rem 0; /* Reducido */
+        min-height: 120px; /* Reducido */
+      }
+      
+      /* BOTÓN HAMBURGUESA SIN BORDE - CORREGIDO */
+      .navbar-toggler {
+        border: none;  /* ← SIN BORDE */
+        padding: 0.5rem;
+        z-index: 1001;
+        position: relative;
+        background: transparent;  /* ← SIN FONDO */
+      }
+      
+      .navbar-toggler:focus {
+        box-shadow: none;  /* ← SIN SOMBRA AL HACER FOCUS */
+      }
+      
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        width: 24px;
+        height: 24px;
+      }
+      
+      .navbar-collapse {
+        background: rgba(0, 0, 0, 0.98);
+        padding: 1.2rem; /* Reducido */
+        margin-top: 0.8rem; /* Reducido */
+        border-radius: 8px; /* Reducido */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .nav-item {
+        margin: 0.4rem 0; /* Reducido */
+      }
+      
+      .nav-link::after {
+        display: none;
+      }
+      
+      .contact-info {
+        padding-right: 0;
+        margin-bottom: 2.5rem; /* Reducido */
+      }
+      
+      .form-container {
+        padding-left: 0;
+      }
+    }
+    
+    /* Móviles grandes - CORREGIDO */
+    @media (max-width: 768px) {
+      /* Reset general para móviles */
+      body {
+        padding-top: 150px; /* Ajustado */
+        width: 100%;
+        overflow-x: hidden;
+      }
+      
+      .container {
+        padding: 0 10px;
+        max-width: 100%;
+      }
+      
+      /* Header y Navbar */
+      .logo-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 10px;
+      }
+      
+      .logo-img {
+        height: 80px; /* Reducido */
+        margin-right: 0;
+        margin-bottom: 0.8rem; /* Reducido */
+        max-width: 100%;
+      }
+      
+      .logo-slogan {
+        font-size: 0.75rem; /* Reducido */
+        letter-spacing: 1px; /* Reducido */
+        text-align: center;
+        padding: 0 5px;
+      }
+      
+      .logo-header {
+        padding: 0.8rem 0; /* Reducido */
+        min-height: 150px; /* Ajustado */
+      }
+      
+      .modern-navbar {
+        top: 150px; /* Ajustado */
+        padding: 0.8rem 10px;
+      }
+      
+      /* Hero Section */
+      .contact-hero {
+        height: auto;
+        padding: 4rem 0 2rem; /* Reducido */
+        margin-top: 40px; /* Reducido */
+      }
+      
+      .contact-hero-title {
+        font-size: 1.6rem; /* Reducido */
+        letter-spacing: 1px;
+        line-height: 1.2;
+        text-align: center;
+        padding: 0 5px;
+      }
+      
+      .contact-hero-subtitle {
+        font-size: 0.9rem; /* Reducido */
+        margin-bottom: 1.5rem; /* Reducido */
+        text-align: justify;
+        padding: 0 5px;
+      }
+      
+      .hero-buttons {
+        text-align: center;
+        padding: 0 10px;
+      }
+      
+      .btn-modern {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+      }
+      
+      /* Contact Section */
+      .contact-section {
+        padding: 2.5rem 0; /* Reducido */
+      }
+      
+      .contact-container {
+        padding: 2rem; /* Reducido */
+        margin-left: 0;
+        margin-right: 0;
+      }
+      
+      .contact-method {
+        padding: 1rem; /* Reducido */
+        margin-left: 0;
+        margin-right: 0;
+      }
+      
+      .contact-icon {
+        width: 45px; /* Reducido */
+        height: 45px; /* Reducido */
+        font-size: 1.1rem; /* Reducido */
+        margin-right: 1rem;
+      }
+      
+      .contact-form {
+        padding: 1.5rem; /* Reducido */
+      }
+      
+      .btn-modern,
+      .btn-primary {
+        display: block;
+        width: 100%;
+        margin: 0.4rem 0;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+      }
+      
+      /* Footer */
+      .modern-footer {
+        padding: 2.5rem 0 1.2rem; /* Reducido */
+      }
+      
+      .footer-bottom {
+        padding: 0 10px;
+      }
+    }
+    
+    /* Móviles pequeños - CORREGIDO */
+    @media (max-width: 576px) {
+      body {
+        padding-top: 140px; /* Ajustado */
+      }
+      
+      .container {
+        padding: 0 8px;
+      }
+      
+      .logo-img {
+        height: 75px; /* Reducido */
+      }
+      
+      .logo-slogan {
+        font-size: 0.7rem; /* Reducido */
+        letter-spacing: 0.8px; /* Reducido */
+      }
+      
+      .logo-header {
+        padding: 0.7rem 0; /* Reducido */
+        min-height: 140px; /* Ajustado */
+      }
+      
+      .modern-navbar {
+        top: 140px; /* Ajustado */
+        padding: 0.8rem 8px;
+      }
+      
+      .contact-hero-title {
+        font-size: 1.4rem; /* Reducido */
+      }
+      
+      .contact-hero-subtitle {
+        font-size: 0.8rem; /* Reducido */
+      }
+      
+      .contact-container {
+        padding: 1.5rem; /* Reducido */
+      }
+      
+      .btn-modern,
+      .btn-primary {
+        font-size: 0.8rem; /* Reducido */
+        padding: 0.7rem 1.2rem; /* Reducido */
+      }
+      
+      .social-links a {
+        width: 35px; /* Reducido */
+        height: 35px; /* Reducido */
+        font-size: 0.8rem; /* Reducido */
+      }
+    }
+    
+    /* Móviles muy pequeños - CORREGIDO */
+    @media (max-width: 400px) {
+      .container {
+        padding: 0 5px;
+      }
+      
+      .logo-img {
+        height: 70px; /* Reducido */
+      }
+      
+      .logo-slogan {
+        font-size: 0.65rem; /* Reducido */
+      }
+      
+      body {
+        padding-top: 140px; /* Ajustado */
+      }
+      
+      .modern-navbar {
+        top: 140px; /* Ajustado */
+      }
+      
+      .logo-header {
+        padding: 0.6rem 0; /* Reducido */
+        min-height: 140px; /* Ajustado */
+      }
+      
+      .contact-hero-title {
+        font-size: 1.3rem; /* Reducido */
+      }
+      
+      .contact-hero-subtitle {
+        font-size: 0.75rem; /* Reducido */
+      }
+    }
+    
+    /* Scroll Animations */
+    [data-aos] {
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo Header - Más compacto -->
+  <header class="logo-header">
+    <div class="logo-container">
+      <img src="images/portada.png" alt="Marconi IT" class="logo-img">
+      <div class="logo-slogan">Prime solutions of tomorrow, delivered with top-notch service and affordability through Artificial Intelligence</div>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="modern-navbar navbar navbar-expand-lg">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="service.html">Operational Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="why.html">Strategic Advantages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="contact.html">Command Center</a>
+          </li>
+          <!-- CALENDLY LINK CORRECTED -->
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/marconix2010'});return false;">
+              <i class="far fa-calendar-alt"></i> Schedule Briefing
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.flightradar24.com" target="_blank">
+              <i class="fas fa-plane" style="color: var(--accent-orange);"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/es/contact.html" class="lang-btn">
+              <img src="images/es-flag.png" alt="ES" style="width: 18px;"> <!-- Reducido -->
+            </a>
+            <a href="/en/contact.html" class="lang-btn">
+              <img src="images/us-flag.png" alt="EN" style="width: 18px;"> <!-- Reducido -->
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section for Contact -->
+  <section class="contact-hero">
+    <div class="container contact-hero-content" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h1 class="contact-hero-title">Command Center</h1>
+          <p class="contact-hero-subtitle">
+            We are here to support your mission. Contact us for inquiries, quotes, or any questions regarding our specialized services.
+          </p>
+          <div class="hero-buttons">
+            <a href="#contact-form" class="btn-modern">Transmit Message</a>
+            <a href="service.html" class="btn-modern outline">Our Services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="contact-info">
+              <h2 class="form-title">Command Center Information</h2>
+              <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;"> <!-- Reducido -->
+                Feel free to contact us through any of the following channels. We are ready to support your operational requirements.
+              </p>
+              
+              <div class="contact-method" data-aos="fade-right" data-aos-delay="100">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>HQ Location</h4>
+                  <p>San Salvador, El Salvador</p>
+                  <a href="https://www.google.com/maps?q=13.776666765116644,-89.11043486858881" target="_blank">
+                    View on Google Maps
+                  </a>
+                </div>
+              </div>
+              
+              <div class="contact-method" data-aos="fade-right" data-aos-delay="200">
+                <div class="contact-icon">
+                  <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Secure Comms</h4>
+                  <p>Available 24/7 for mission-critical inquiries</p>
+                  <a href="https://wa.me/50360649822" target="_blank">
+                    +503 6064-9822
+                  </a>
+                </div>
+              </div>
+              
+              <div class="contact-method" data-aos="fade-right" data-aos-delay="300">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Secure Email</h4>
+                  <p>Response within 24 hours guaranteed</p>
+                  <a href="marconiitaero@outlook.com">
+                    marconiitaero@outlook.com
+                  </a>
+                </div>
+              </div>
+              
+              <div class="contact-method" data-aos="fade-right" data-aos-delay="400">
+                <div class="contact-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Operational Hours</h4>
+                  <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                  <p>Sunday: Standby Only</p>
+                </div>
+              </div>
+              
+              <div class="mt-3"> <!-- mt reducido -->
+                <h4 style="color: var(--text-light); margin-bottom: 0.8rem; font-size: 1rem;">Follow Our Operations</h4> <!-- Reducido -->
+                <div class="social-links">
+                  <a href="https://www.facebook.com/people/Marconi-It-and-Aerospace-Solutions/61561953869305/" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="https://twitter.com/TuUsuarioDeTwitter" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/company/marconi-it-and-aerospace-solutions" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="https://www.instagram.com/juanpablox2017/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-7">
+            <div class="form-container">
+              <h2 class="form-title" id="contact-form">Transmission Protocol</h2>
+              <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;"> <!-- Reducido -->
+                Complete the following transmission form and command center will establish contact immediately.
+              </p>
+              
+              <form id="miFormulario" action="https://formspree.io/f/mvonozko" method="POST" onsubmit="submitForm(event)" class="contact-form">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="nombre" class="form-label">First Name *</label>
+                      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Enter your first name" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="apellido" class="form-label">Last Name *</label>
+                      <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Enter your last name" required>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="telefono" class="form-label">Contact Number *</label>
+                      <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Enter your contact number" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="email" class="form-label">Email Address *</label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="comentario" class="form-label">Mission Details *</label>
+                  <textarea class="form-control" id="comentario" name="comentario" rows="4" placeholder="Describe your operational requirements or mission parameters..." required></textarea>
+                </div>
+                
+                <button class="btn btn-primary" type="submit">Initiate Transmission</button>
+              </form>
+              
+              <div id="mensajeConfirmacion" class="success-message">
+                <i class="fas fa-check-circle" style="font-size: 1.8rem; margin-bottom: 0.8rem;"></i> <!-- Reducido -->
+                <h4 style="color: #00ff00; margin-bottom: 0.4rem; font-size: 1.1rem;">Transmission Successful!</h4> <!-- Reducido -->
+                <p style="font-size: 0.85rem;">Message received by command center. We will establish contact immediately.</p> <!-- Reducido -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up">Command Center Location</h2> <!-- mb reducido -->
+      <div class="map-container" data-aos="zoom-in">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.962710385393!2d-89.119303!3d13.7811215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f633988433020d7%3A0x56e97c1c284c9803!2sMarconi%20IT%20Solutions!5e0!3m2!1ses!2ssv!4v1672380912278!5m2!1ses!2ssv" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="modern-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h4 class="footer-title">About Us</h4>
+          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.85rem;"> <!-- Font size reducido -->
+            We specialize in delivering cutting-edge information technology and aerospace solutions tailored to your operational requirements, always maintaining budget discipline.
+          </p>
+          <div class="social-links mt-3"> <!-- mt reducido -->
+            <a href="https://www.facebook.com/people/Marconi-It-and-Aerospace-Solutions/61561953869305/" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/TuUsuarioDeTwitter" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/marconi-it-and-aerospace-solutions" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/juanpablox2017/" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-4 mb-4">
+          <h4 class="footer-title">Quick Links</h4>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="service.html" class="footer-link">Services</a>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="why.html" class="footer-link">Why Choose Us?</a>
+          <a href="contact.html" class="footer-link">Command Center</a>
+          <!-- CALENDLY LINK IN FOOTER CORRECTED -->
+          <a class="footer-link" href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/marconix2010'});return false;">Schedule Briefing</a>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h4 class="footer-title">Command Center</h4>
+          <div style="color: var(--text-muted); line-height: 2; font-size: 0.85rem;"> <!-- Font size reducido -->
+            <p>
+              <i class="fas fa-map-marker-alt" style="color: var(--accent-blue); margin-right: 10px;"></i>
+              <a href="https://www.google.com/maps?q=13.776666765116644,-89.11043486858881" target="_blank" style="color: var(--text-muted); text-decoration: none;">
+                View HQ Location
+              </a>
+            </p>
+            <p>
+              <i class="fab fa-whatsapp" style="color: var(--accent-blue); margin-right: 10px;"></i>
+              <a href="https://wa.me/50360649822" target="_blank" style="color: var(--text-muted); text-decoration: none;">
+                +503 6064-9822
+              </a>
+            </p>
+            <p>
+              <i class="fas fa-envelope" style="color: var(--accent-blue); margin-right: 10px;"></i>
+              <a href="mailto:marconiitaero@outlook.com" style="color: var(--text-muted); text-decoration: none;">
+                marconiitaero@outlook.com
+              </a>
+            </p>
+            <p>
+              <i class="fas fa-clock" style="color: var(--accent-blue); margin-right: 10px;"></i>
+              Mon-Sat: 09:00 - 18:00
+            </p>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h4 class="footer-title">HQ Location</h4>
+          <div style="border-radius: 12px; overflow: hidden; height: 180px;"> <!-- Altura reducida -->
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.962710385393!2d-89.119303!3d13.7811215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f633988433020d7%3A0x56e97c1c284c9803!2sMarconi%20IT%20Solutions!5e0!3m2!1ses!2ssv!4v1672380912278!5m2!1ses!2ssv" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="displayYear"></span> Marconi IT & Aerospace Solutions. All rights reserved. Designed by <a href="#" style="color: var(--accent-blue); text-decoration: none;">Juan Guzman</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  
+  <!-- CALENDLY SCRIPT - CORRECTED WITH EXAMPLE SYNTAX -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <!-- Chatbot -->
+  <script src="//code.tidio.co/mhiuatzylewxjbkmtcdfjsibvjbx0txp.js" async></script>
+  <div class="tidio-chat"></div>
+  
+  <script>
+    // AOS Init
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 100
+    });
+    
+    // Display Year
+    document.getElementById('displayYear').textContent = new Date().getFullYear();
+    
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.modern-navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // Form Submission
+    function submitForm(event) {
+      event.preventDefault(); // Prevent traditional form submission
+
+      const form = event.target;
+
+      // Create AJAX request to submit the form
+      const xhr = new XMLHttpRequest();
+      xhr.open(form.method, form.action, true);
+      xhr.setRequestHeader("Accept", "application/json");
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState !== XMLHttpRequest.DONE) return;
+          if (xhr.status === 200) {
+              form.reset(); // Clear form fields
+
+              const mensajeConfirmacion = document.getElementById("mensajeConfirmacion");
+              mensajeConfirmacion.style.display = "block"; // Show confirmation message
+
+              // Hide message after 5 seconds
+              setTimeout(() => {
+                  mensajeConfirmacion.style.display = "none";
+              }, 5000);
+          } else {
+              alert("Transmission error. Please resubmit your message.");
+          }
+      };
+      const formData = new FormData(form);
+      xhr.send(formData);
+    }
+    
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+  <!-- Disable right-click context menu -->
+<script>
+  (function() {
+    document.addEventListener('contextmenu', function(event) {
+      event.preventDefault();
+    });
+  })();
+</script>
+<!-- Disable F12 Key -->
+<script>
+  (function() {
+    document.addEventListener('keydown', function(event) {
+      if (event.keyCode === 123) { // F12
+        event.preventDefault();
+      }
+    });
+  })();
+</script>
+<!-- Disable Specific Key Combinations -->
+<script>
+  (function() {
+    document.addEventListener('keydown', function(event) {
+      // Check for Ctrl+Shift+I (F12 for tools)
+      if (event.ctrlKey && event.shiftKey && event.keyCode === 73) { // 73 is the keyCode for 'I'
+        event.preventDefault();
+      }
+      
+      // Check for Ctrl+U (View Source)
+      if (event.ctrlKey && event.keyCode === 85) { // 85 is the keyCode for 'U'
+        event.preventDefault();
+      }
+
+      // Check for Ctrl+Shift+J (Console)
+      if (event.ctrlKey && event.shiftKey && event.keyCode === 74) { // 74 is the keyCode for 'J'
+        event.preventDefault();
+      }
+    });
+  })();
+</script>
+<!-- Disable Ctrl+C -->
+<script>
+  (function() {
+    document.addEventListener('keydown', function(event) {
+      // Check for Ctrl+C (Copy)
+      if (event.ctrlKey && event.keyCode === 67) { // 67 is the keyCode for 'C'
+        event.preventDefault();
+      }
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,2305 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Specialized Services - Marconi IT & Aerospace Solutions</title>
+  <link rel="icon" href="images/favicon.png" type="image/gif">
+  
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <!-- AOS Animation -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- Google Fonts - Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-dark: #000000;
+      --secondary-dark: #0a0a0a;
+      --accent-blue: #00d4ff;
+      --accent-orange: #ff6b35;
+      --text-light: #ffffff;
+      --text-muted: #a0a0a0;
+      --border-color: #1a1a1a;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* CORRECCIONES CRÍTICAS PARA MÓVILES */
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--primary-dark);
+      color: var(--text-light);
+      overflow-x: hidden;
+      padding-top: 140px;
+    }
+    
+    /* Contenedores principales - CORREGIDO PARA MÓVILES */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* Logo Container - Reducido */
+    .logo-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 2000;
+      padding: 0.7rem 0;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      width: 100%;
+    }
+    
+    .logo-img {
+      height: 80px;
+      margin-right: 2rem;
+      transition: transform 0.3s ease;
+      max-width: 100%;
+    }
+    
+    .logo-img:hover {
+      transform: scale(1.05);
+    }
+    
+    .logo-slogan {
+      font-size: 0.9rem;
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 400;
+      line-height: 1.4;
+      max-width: 800px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* Navbar */
+    .modern-navbar {
+      background: rgba(0, 0, 0, 0.98);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 0.8rem 0;
+      position: fixed;
+      width: 100%;
+      top: 120px;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .modern-navbar.scrolled {
+      padding: 0.4rem 0;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link {
+      color: var(--text-light) !important;
+      font-weight: 500;
+      font-size: 0.85rem;
+      padding: 0.4rem 1rem !important;
+      transition: all 0.3s ease;
+      position: relative;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--text-light);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 80%;
+    }
+    
+    .lang-btn {
+      margin-left: 0.5rem;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    
+    .lang-btn:hover {
+      opacity: 1;
+    }
+    
+    /* Hero Section for Services - Reducido - CORREGIDO PARA MÓVILES */
+    .services-hero {
+      position: relative;
+      height: 40vh;
+      display: flex;
+      align-items: center;
+      margin-top: 50px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.95) 100%);
+      width: 100%;
+    }
+    
+    .services-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+    
+    .services-hero-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      word-wrap: break-word;
+    }
+    
+    .services-hero-subtitle {
+      font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      font-family: 'Montserrat', sans-serif;
+      word-wrap: break-word;
+    }
+    
+    /* Service Categories */
+    .service-categories {
+      padding: 3rem 0;
+      background: var(--primary-dark);
+      width: 100%;
+    }
+    
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.category-tab {
+  background: var(--secondary-dark);
+  border: 2px solid var(--text-light);
+  border-radius: 50px;
+  padding: 0.7rem 1.5rem;
+  color: var(--text-light);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Hover igual que botones */
+.category-tab:hover {
+  background: var(--accent-orange);
+  border-color: var(--accent-orange);
+  color: var(--text-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+}
+
+/* Activo igual que hover */
+.category-tab.active {
+  background: var(--accent-orange);
+  border-color: var(--accent-orange);
+  color: var(--text-light);
+}
+    
+    /* Modernized Service Cards */
+    .service-section {
+      padding: 3rem 0;
+      background: var(--primary-dark);
+      width: 100%;
+    }
+    
+    .service-category {
+      display: none;
+    }
+    
+    .service-category.active {
+      display: block;
+    }
+    
+    .service-card {
+      background: var(--secondary-dark);
+      border-radius: 15px;
+      padding: 2rem;
+      height: 100%;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      width: 100%;
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--text-light);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.05);
+    }
+    
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      font-size: 1.8rem;
+      color: var(--text-light);
+    }
+    
+    .service-card h5 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: var(--text-light);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .service-summary {
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .service-features {
+      margin-bottom: 1.5rem;
+    }
+    
+    .service-feature {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 0.7rem;
+      color: var(--text-muted);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .service-feature i {
+      color: var(--accent-blue);
+      margin-right: 10px;
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+    }
+    
+    /* Custom icon styles with images */
+    .custom-icon-img {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      filter: invert(1) brightness(2);
+      transition: all 0.3s ease;
+    }
+    
+    .service-card:hover .custom-icon-img {
+      transform: scale(1.1);
+      filter: invert(1) brightness(2) drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+    }
+    
+    /* Modal Styles */
+    .service-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 2100;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .service-modal.active {
+      display: flex;
+      opacity: 1;
+    }
+    
+    .modal-content {
+      background: var(--secondary-dark);
+      margin: auto;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 15px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+      transform: translateY(50px) scale(0.9);
+      opacity: 0;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    
+    .service-modal.active .modal-content {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    
+    .modal-header {
+      padding: 1.5rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+    }
+    
+    .modal-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .modal-title .service-icon {
+      width: 55px;
+      height: 55px;
+      font-size: 1.6rem;
+      margin-bottom: 0;
+    }
+    
+    .modal-title h4 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .close-modal {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: #ff4757;
+      color: white;
+      border: none;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+    }
+    
+    .close-modal:hover {
+      background: #ff3742;
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(255, 71, 87, 0.6);
+    }
+    
+    .modal-body {
+      padding: 1.2rem 1.5rem 1.5rem;
+    }
+    
+    .modal-body p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .modal-features {
+      margin: 1.5rem 0;
+    }
+    
+    .modal-feature {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 0.8rem;
+      color: var(--text-muted);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .modal-feature i {
+      color: var(--accent-blue);
+      margin-right: 10px;
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+    }
+    
+    .modal-actions {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    
+    /* Modernized Buttons - MEJORADOS PARA MÓVILES */
+    .btn-modern {
+      padding: 0.7rem 1.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 50px;
+      border: 2px solid var(--text-light);
+      background: #000000;
+      color: var(--text-light);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.8rem;
+      margin-bottom: 0.4rem;
+      font-family: 'Montserrat', sans-serif;
+      min-height: 44px;
+    }
+
+    .btn-modern:hover {
+      background: var(--accent-orange);
+      color: var(--text-light);
+      border-color: var(--accent-orange);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+    }
+
+    .btn-modern.outline {
+      background: transparent;
+      color: var(--text-light);
+      border-color: var(--text-light);
+    }
+
+    .btn-modern.outline:hover {
+      background: var(--accent-orange);
+      color: var(--text-light);
+      border-color: var(--accent-orange);
+    }
+
+    .btn-primary {
+      background: #000000 !important;
+      color: var(--text-light) !important;
+      border: 2px solid var(--text-light) !important;
+      border-radius: 50px !important;
+      padding: 0.7rem 1.5rem !important;
+      font-weight: 600 !important;
+      transition: all 0.3s ease !important;
+      font-size: 0.85rem;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-orange) !important;
+      color: var(--text-light) !important;
+      border-color: var(--accent-orange) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent !important;
+      color: var(--text-light) !important;
+      border: 2px solid var(--text-light) !important;
+      border-radius: 50px !important;
+      padding: 0.7rem 1.5rem !important;
+      font-weight: 600 !important;
+      transition: all 0.3s ease !important;
+      font-size: 0.85rem;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-secondary:hover {
+      background: var(--accent-orange) !important;
+      color: var(--text-light) !important;
+      border-color: var(--accent-orange) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+    }
+    
+    /* Modernized Footer */
+    .modern-footer {
+      background: var(--primary-dark);
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 0 1.5rem;
+      width: 100%;
+    }
+    
+    .footer-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      color: var(--text-light);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .footer-link {
+      display: block;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 0.6rem;
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .footer-link:hover {
+      color: var(--accent-blue);
+      padding-left: 5px;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-light);
+      margin-right: 0.6rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .social-links a:hover {
+      background: var(--text-light);
+      color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    
+    .footer-bottom {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding: 0 15px;
+    }
+    
+    /* Ajustes específicos para pantallas grandes */
+    @media (min-width: 1400px) {
+      .container {
+        max-width: 1320px;
+      }
+    }
+    
+    /* Ajustes para pantallas medianas */
+    @media (max-width: 1200px) {
+      .container {
+        max-width: 1140px;
+      }
+      
+      .logo-img {
+        height: 95px;
+        margin-right: 1.8rem;
+      }
+      
+      .logo-slogan {
+        font-size: 0.85rem;
+      }
+      
+      body {
+        padding-top: 115px;
+      }
+      
+      .modern-navbar {
+        top: 115px;
+      }
+      
+      .logo-header {
+        padding: 0.9rem 0;
+        min-height: 115px;
+      }
+    }
+    
+    /* Tablets y dispositivos medianos */
+    @media (max-width: 991px) {
+      .container {
+        max-width: 960px;
+      }
+      
+      .logo-img {
+        height: 90px;
+        margin-right: 1.5rem;
+      }
+      
+      .logo-slogan {
+        font-size: 0.8rem;
+      }
+      
+      body {
+        padding-top: 110px;
+      }
+      
+      .modern-navbar {
+        top: 110px;
+      }
+      
+      .logo-header {
+        padding: 0.8rem 0;
+        min-height: 110px;
+      }
+      
+      /* BOTÓN HAMBURGUESA SIN BORDE - CORREGIDO */
+      .navbar-toggler {
+        border: none;  /* ← SIN BORDE */
+        padding: 0.5rem;
+        z-index: 1001;
+        position: relative;
+        background: transparent;  /* ← SIN FONDO */
+      }
+      
+      .navbar-toggler:focus {
+        box-shadow: none;  /* ← SIN SOMBRA AL HACER FOCUS */
+      }
+      
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        width: 24px;
+        height: 24px;
+      }
+      
+      .navbar-collapse {
+        background: rgba(0, 0, 0, 0.98);
+        padding: 1.2rem;
+        margin-top: 0.8rem;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);  /* ← Borde sutil para el menú */
+      }
+      
+      .nav-item {
+        margin: 0.4rem 0;
+      }
+      
+      .nav-link::after {
+        display: none;
+      }
+    }
+    
+    /* CORRECCIONES ESPECÍFICAS PARA MÓVILES - ARREGLADAS */
+    
+    @media (max-width: 768px) {
+      /* Reset general para móviles */
+      body {
+        padding-top: 150px;
+        width: 100%;
+        overflow-x: hidden;
+      }
+      
+      .container {
+        padding: 0 10px;
+        max-width: 100%;
+      }
+      
+      /* Header y Navbar - CORREGIDO */
+      .logo-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 10px;
+      }
+      
+      .logo-img {
+        height: 85px;
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+        max-width: 100%;
+      }
+      
+      .logo-slogan {
+        font-size: 0.75rem;
+        letter-spacing: 1.2px;
+        text-align: center;
+        padding: 0 5px;
+      }
+      
+      .logo-header {
+        padding: 0.7rem 0;
+        min-height: 150px;
+      }
+      
+      .modern-navbar {
+        top: 150px;
+        padding: 0.8rem 10px;
+      }
+      
+      /* Toggler mejorado - SIN BORDE NI COLOR */
+      .navbar-toggler {
+        border: none;  /* ← SIN BORDE */
+        padding: 0.6rem;
+        z-index: 1001;
+        position: relative;
+        background: transparent;  /* ← SIN FONDO */
+      }
+      
+      .navbar-toggler:focus {
+        box-shadow: none;  /* ← SIN SOMBRA */
+      }
+      
+      .navbar-toggler-icon {
+        width: 26px;
+        height: 26px;
+      }
+      
+      /* Hero Section */
+      .services-hero {
+        height: auto;
+        padding: 4rem 0 2rem;
+        margin-top: 40px;
+      }
+      
+      .services-hero-title {
+        font-size: 1.7rem;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        text-align: center;
+        padding: 0 5px;
+      }
+      
+      .services-hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        text-align: justify;
+        padding: 0 5px;
+      }
+      
+      .hero-buttons {
+        text-align: center;
+        padding: 0 10px;
+      }
+      
+      .btn-modern {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+      }
+      
+      /* Service Categories */
+      .service-categories {
+        padding: 2.5rem 0;
+      }
+      
+      .category-tabs {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      
+      .category-tab {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+      }
+      
+      /* Service Section */
+      .service-section {
+        padding: 2.5rem 0;
+      }
+      
+      .service-card {
+        padding: 1.5rem;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      
+      .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+      }
+      
+      .service-card h5 {
+        font-size: 1.1rem;
+      }
+      
+      /* Modal */
+      .modal-content {
+        width: 95%;
+        margin: 1rem auto;
+      }
+      
+      .modal-header {
+        padding: 1.2rem 1.2rem 0.8rem;
+      }
+      
+      .modal-body {
+        padding: 0.8rem 1.2rem 1.2rem;
+      }
+      
+      .modal-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      
+      .modal-title h4 {
+        font-size: 1.3rem;
+      }
+      
+      .close-modal {
+        top: 0.8rem;
+        right: 0.8rem;
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+      }
+      
+      .btn-modern,
+      .btn-primary,
+      .btn-secondary {
+        display: block;
+        width: 100%;
+        margin: 0.4rem 0;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+      }
+      
+      .modal-actions {
+        flex-direction: column;
+      }
+      
+      /* Footer */
+      .modern-footer {
+        padding: 2.5rem 0 1.2rem;
+      }
+      
+      .footer-bottom {
+        padding: 0 10px;
+      }
+    }
+    
+    /* Móviles pequeños - CORREGIDO */
+    @media (max-width: 576px) {
+      body {
+        padding-top: 140px;
+      }
+      
+      .container {
+        padding: 0 8px;
+      }
+      
+      .logo-img {
+        height: 80px;
+      }
+      
+      .logo-slogan {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+      }
+      
+      .logo-header {
+        padding: 0.6rem 0;
+        min-height: 140px;
+      }
+      
+      .modern-navbar {
+        top: 140px;
+        padding: 0.8rem 8px;
+      }
+      
+      .services-hero-title {
+        font-size: 1.4rem;
+      }
+      
+      .services-hero-subtitle {
+        font-size: 0.8rem;
+      }
+      
+      .service-card {
+        padding: 1.2rem;
+      }
+      
+      .btn-modern,
+      .btn-primary,
+      .btn-secondary {
+        font-size: 0.85rem;
+        padding: 0.7rem 1.2rem;
+      }
+      
+      .social-links a {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+      }
+      
+      .footer-title {
+        font-size: 1rem;
+      }
+    }
+    
+    /* Móviles muy pequeños - CORREGIDO */
+    @media (max-width: 400px) {
+      .container {
+        padding: 0 5px;
+      }
+      
+      .logo-img {
+        height: 70px;
+      }
+      
+      .logo-slogan {
+        font-size: 0.65rem;
+      }
+      
+      body {
+        padding-top: 140px;
+      }
+      
+      .modern-navbar {
+        top: 140px;
+      }
+      
+      .logo-header {
+        padding: 0.5rem 0;
+        min-height: 140px;
+      }
+      
+      .services-hero-title {
+        font-size: 1.3rem;
+      }
+      
+      .services-hero-subtitle {
+        font-size: 0.75rem;
+      }
+      
+      .modal-content {
+        width: 98%;
+        margin: 0.5rem auto;
+      }
+    }
+    
+    /* Scroll Animations */
+    [data-aos] {
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo Header - Above everything -->
+  <header class="logo-header">
+    <div class="logo-container">
+      <img src="images/portada.png" alt="Marconi IT" class="logo-img">
+      <div class="logo-slogan">Prime solutions of tomorrow, delivered with top-notch service and affordability through Artificial Intelligence</div>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="modern-navbar navbar navbar-expand-lg">
+    <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="service.html">Operational Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="why.html">Strategic Advantages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Command</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/marconix2010'});return false;">
+              <i class="far fa-calendar-alt"></i> Schedule Briefing
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.flightradar24.com" target="_blank">
+              <i class="fas fa-plane" style="color: var(--accent-orange);"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/es/service.html" class="lang-btn">
+              <img src="images/es-flag.png" alt="ES" style="width: 18px;">
+            </a>
+            <a href="/en/service.html" class="lang-btn">
+              <img src="images/us-flag.png" alt="EN" style="width: 18px;">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section for Services -->
+  <section class="services-hero">
+    <div class="container services-hero-content" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h1 class="services-hero-title">Our Specialized Services</h1>
+          <p class="services-hero-subtitle" style="text-align: justify; word-spacing: -2px;">
+          Cutting-edge comprehensive solutions in information technologies, software development, autonomous UAV aerial systems, ISR platforms, C-UAS systems, flight simulators, and aerospace consulting for defense and security sectors.
+          </p>
+          <div class="hero-buttons">
+            <a href="#services" class="btn-modern">Explore Services</a>
+            <a href="contact.html" class="btn-modern outline">Contact Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Service Categories -->
+<section class="service-categories" id="services">
+  <div class="container">
+    <h2 class="text-center mb-4" data-aos="fade-up" style="font-family: 'Montserrat', sans-serif;">Our Specialization Areas</h2>
+    <div class="category-tabs" data-aos="fade-up" data-aos-delay="100">
+      <div class="category-tab active" data-category="aero">Aerospace & Drones</div>
+      <div class="category-tab" data-category="consulting">Consulting</div>
+      <div class="category-tab" data-category="software">Software Development</div>
+      <div class="category-tab" data-category="design">Design & Digitalization</div>
+      <div class="category-tab" data-category="it">Technology & IT</div>
+    </div>
+  </div>
+</section>
+
+<!-- IT Services -->
+<section class="service-section">
+  <div class="container">
+    
+    <!-- 1. Aerospace & Drones -->
+    <div class="service-category active" id="aero-category">
+      <h2 class="text-center mb-4" data-aos="fade-up" style="font-family: 'Montserrat', sans-serif;">Aerospace & Drones</h2>
+      <div class="row">
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card">
+            <div class="service-icon">
+              <img src="images/drone.png" alt="Drone Service" class="custom-icon-img">
+            </div>
+            <h5>Tactical FPV Drones, Autonomous Aerial Systems, ISR Platforms & C-UAS Systems</h5>
+            <p class="service-summary">
+              Advanced solutions with next-generation VTOL UAV drones and anti-drone systems for surveillance, inspection, and critical missions.
+            </p>
+            <div class="service-features">
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Next-generation VTOL UAV systems</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>C-UAS Anti-Drone Systems</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Advanced AI technology</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Civil and military operations</span>
+              </div>
+            </div>
+            <button class="btn-modern open-modal" data-service="drones-aeroespacial">View Full Details</button>
+          </div>
+        </div>
+        
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-fighter-jet"></i>
+            </div>
+            <h5>Flight Simulators</h5>
+            <p class="service-summary">
+              Cutting-edge flight simulation solutions with custom hardware integration and specialized consulting for Civil-Military simulation platforms.
+            </p>
+            <div class="service-features">
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Comprehensive simulation setup</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Custom hardware integration</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Specialized software solutions</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Platform consulting</span>
+              </div>
+            </div>
+            <button class="btn-modern open-modal" data-service="simulacion-vuelo">View Full Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 2. Consulting Services -->
+    <div class="service-category" id="consulting-category">
+      <h2 class="text-center mb-4" data-aos="fade-up" style="font-family: 'Montserrat', sans-serif;">Civil-Military Aviation Consulting</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100" style="max-width: 500px;">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-plane"></i>
+            </div>
+            <h5>Civil-Military Aviation Consulting</h5>
+            <p class="service-summary">
+              Specialized consulting services led by FAA-certified experts for civil and military aviation projects with AI and data analytics.
+            </p>
+            <div class="service-features">
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>FAA certified experts</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Cutting-edge AI technology</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Advanced data analysis</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Civil and military projects</span>
+              </div>
+            </div>
+            <button class="btn-modern open-modal" data-service="consultoria-aviation">View Full Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 3. Software Development Services -->
+    <div class="service-category" id="software-category">
+      <h2 class="text-center mb-4" data-aos="fade-up" style="font-family: 'Montserrat', sans-serif;">Software Development</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h5>Software Development</h5>
+            <p class="service-summary">
+              We create custom enterprise solutions combining Low Code platforms and the power of artificial intelligence to accelerate processes, optimize operations, and improve decision-making.
+            </p>
+            <div class="service-features">
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Rapid application implementation</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Intelligent process automation</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Integration with existing systems</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Continuous optimization through AI</span>
+              </div>
+            </div>
+            <button class="btn-modern open-modal" data-service="software-lowcode-ia">View Full Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 4. Design Services -->
+    <div class="service-category" id="design-category">
+      <h2 class="text-center mb-4" data-aos="fade-up" style="font-family: 'Montserrat', sans-serif;">Design & Digitalization</h2>
+      <div class="row">
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <h5>Graphic Design Services</h5>
+            <p class="service-summary">
+              Creation of impactful visual identities: logos, branding, web design, advertising materials, and interactive experiences.
+            </p>
+            <div class="service-features">
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Logo design and corporate identity</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Marketing and advertising materials</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Web design and social media graphics</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Infographics and presentations</span>
+              </div>
+            </div>
+            <button class="btn-modern open-modal" data-service="diseno-grafico">View Full Details</button>
+          </div>
+        </div>
+        
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h5>Digitalization with Kizeo</h5>
+            <p class="service-summary">
+              Innovative digital solutions to optimize business processes with mobile forms, automation, and system integration.
+            </p>
+            <div class="service-features">
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Custom mobile forms</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Custom automatic reports</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>API integrations</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Offline mode operation</span>
+              </div>
+            </div>
+            <button class="btn-modern open-modal" data-service="digitalizacion-kizeo">View Full Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 5. IT Services -->
+    <div class="service-category" id="it-category">
+      <h2 class="text-center mb-4" data-aos="fade-up" style="font-family: 'Montserrat', sans-serif;">Technology & IT</h2>
+      <div class="row">
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h5>PC Technical Support</h5>
+            <p class="service-summary">
+              Comprehensive computer maintenance, repair, and optimization services. Includes hardware upgrades, software installation, virus removal, and ongoing technical support.
+            </p>
+            <div class="service-features">
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Comprehensive hardware and software repair</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Component and system upgrades</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Virus removal and security measures</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Preventive and corrective maintenance</span>
+              </div>
+            </div>
+            <button class="btn-modern open-modal" data-service="soporte-tecnico">View Full Details</button>
+          </div>
+        </div>
+        
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h5>Advanced Data Recovery</h5>
+            <p class="service-summary">
+              Specialized services for data recovery on hard drives, USB drives, SD cards, and other storage media, including remote recovery solutions.
+            </p>
+            <div class="service-features">
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Recovery of damaged or corrupted hard drives</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Recovery of USB drives and SD cards</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Advanced services for RAID arrays</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Remote data recovery</span>
+              </div>
+            </div>
+            <button class="btn-modern open-modal" data-service="recuperacion-datos">View Full Details</button>
+          </div>
+        </div>
+        
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h5>Remote Help Desk Assistance</h5>
+            <p class="service-summary">
+              Instant remote technical support to solve computer problems from the comfort of your home or office via TeamViewer.
+            </p>
+            <div class="service-features">
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Real-time remote support</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Software installation and configuration</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Remote system optimization</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Virus and malware removal</span>
+              </div>
+            </div>
+            <button class="btn-modern open-modal" data-service="asistencia-remota">View Full Details</button>
+          </div>
+        </div>
+        
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h5>Firmware Updates and ROM Flashing</h5>
+            <p class="service-summary">
+              Comprehensive repair, maintenance, and update services for mobile phones, including ROM flashing and device unlocking.
+            </p>
+            <div class="service-features">
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Firmware updates</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Custom ROM flashing</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>Password and software unlocking</span>
+              </div>
+              <div class="service-feature">
+                <i class="fas fa-check"></i>
+                <span>System recovery</span>
+              </div>
+            </div>
+            <button class="btn-modern open-modal" data-service="firmware-moviles">View Full Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-4" data-aos="fade-up">
+      <a href="contact.html" class="btn-modern">
+        Request a Custom Quote
+      </a>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="modern-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h4 class="footer-title">About Us</h4>
+          <p style="color: var(--text-muted); line-height: 1.6; font-family: 'Montserrat', sans-serif;">
+            We specialize in providing cutting-edge information technology and aerospace solutions tailored to your needs, always mindful of your budget.
+          </p>
+          <div class="social-links mt-4">
+            <a href="https://www.facebook.com/people/Marconi-It-and-Aerospace-Solutions/61561953869305/" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/TuUsuarioDeTwitter" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/marconi-it-and-aerospace-solutions" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/juanpablox2017/" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-4 mb-4">
+          <h4 class="footer-title">Quick Links</h4>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="service.html" class="footer-link">Services</a>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="why.html" class="footer-link">Why Choose Us</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+          <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/marconix2010'});return false;" class="footer-link">Schedule Appointment</a>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h4 class="footer-title">Contact</h4>
+          <div style="color: var(--text-muted); line-height: 2;">
+            <p style="font-family: 'Montserrat', sans-serif;">
+              <i class="fas fa-map-marker-alt" style="color: var(--accent-blue); margin-right: 10px;"></i>
+              <a href="https://www.google.com/maps?q=13.776666765116644,-89.11043486858881" target="_blank" style="color: var(--text-muted); text-decoration: none;">
+                View Location
+              </a>
+            </p>
+            <p style="font-family: 'Montserrat', sans-serif;">
+              <i class="fab fa-whatsapp" style="color: var(--accent-blue); margin-right: 10px;"></i>
+              <a href="https://wa.me/50360649822" target="_blank" style="color: var(--text-muted); text-decoration: none;">
+                +503 6064-9822
+              </a>
+            </p>
+            <p style="font-family: 'Montserrat', sans-serif;">
+              <i class="fas fa-envelope" style="color: var(--accent-blue); margin-right: 10px;"></i>
+              <a href="mailto:marconiitaero@outlook.com" style="color: var(--text-muted); text-decoration: none;">
+                marconiitaero@outlook.com
+              </a>
+            </p>
+            <p style="font-family: 'Montserrat', sans-serif;">
+              <i class="fas fa-clock" style="color: var(--accent-blue); margin-right: 10px;"></i>
+              Mon-Sat: 09:00 - 18:00
+            </p>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h4 class="footer-title">Location</h4>
+          <div style="border-radius: 15px; overflow: hidden; height: 200px;">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.962710385393!2d-89.119303!3d13.7811215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f633988433020d7%3A0x56e97c1c284c9803!2sMarconi%20IT%20Solutions!5e0!3m2!1ses!2ssv!4v1672380912278!5m2!1ses!2ssv" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="displayYear"></span> Marconi IT & Aerospace Solutions. All rights reserved. Designed by <a href="#" style="color: var(--accent-blue); text-decoration: none;">Juan Guzman</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Service Modals -->
+  <div class="service-modal" id="service-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">
+          <div class="service-icon" id="modal-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h4 id="modal-title">Service Title</h4>
+        </div>
+        <button class="close-modal" id="close-modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- Content will be loaded dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  
+  <!-- CALENDLY SCRIPT -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <!-- Chatbot -->
+  <script src="//code.tidio.co/mhiuatzylewxjbkmtcdfjsibvjbx0txp.js" async></script>
+  <div class="tidio-chat"></div>
+  
+  <script>
+    // AOS Init
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 100
+    });
+    
+    // Display Year
+    document.getElementById('displayYear').textContent = new Date().getFullYear();
+    
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.modern-navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // Category Tabs Functionality
+    document.querySelectorAll('.category-tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.category-tab').forEach(t => {
+          t.classList.remove('active');
+        });
+        
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Hide all categories
+        document.querySelectorAll('.service-category').forEach(category => {
+          category.classList.remove('active');
+        });
+        
+        // Show selected category
+        const categoryId = this.getAttribute('data-category') + '-category';
+        document.getElementById(categoryId).classList.add('active');
+      });
+    });
+    
+    // Service Details Data
+    const serviceData = {
+      'soporte-tecnico': {
+        title: 'PC Technical Support',
+        icon: 'fas fa-laptop-code',
+        content: `
+          <p>We specialize in taking care of your computer, covering all current technological needs. Our services include:</p>
+          
+          <div class="modal-features">
+            <div class="modal-feature">
+              <i class="fas fa-laptop"></i>
+              <div>
+                <strong>Virus Removal and Security:</strong> Complete removal of viruses and malware, along with implementation of robust security measures to protect your computer from future threats.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-laptop"></i>
+              <div>
+                <strong>System Optimization:</strong> Performance tuning and optimization of your computer to ensure faster boot times, smoother operation, and improved overall efficiency.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-laptop"></i>
+              <div>
+                <strong>Technical Support and Troubleshooting:</strong> Ongoing support to resolve any technical issues, including hardware failures, software conflicts, and connectivity problems.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-laptop"></i>
+              <div>
+                <strong>Preventive Maintenance:</strong> Regular maintenance services to prevent potential issues and extend your computer's lifespan. This includes system cleaning, hardware checks, and updates to ensure optimal performance and reliability.
+              </div>
+            </div>
+          </div>
+        `,
+        actions: `
+          <a href="https://www.paypal.com/ncp/payment/N5AA25HQJDTES" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <span style="color: white; font-weight: bold;">Pay Technical Support</span>
+          </a>
+          <a href="https://www.teamviewer.com/en-us/download/windows/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            Download TeamViewer Here
+          </a>
+        `
+      },
+      'recuperacion-datos': {
+        title: 'Advanced Data Recovery',
+        icon: 'fas fa-database',
+        content: `
+          <p>We offer advanced data recovery services for hard drives, USB drives, SD cards, and other storage media, including remote recovery solutions.</p>
+          
+          <div class="modal-features">
+            <div class="modal-feature">
+              <i class="fas fa-hdd"></i>
+              <div>
+                <strong>Hard Drive Data Recovery:</strong> Specialized services for recovering data from damaged or corrupted hard drives, including recovery from mechanical failures, logical errors, and accidental deletions.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-hdd"></i>
+              <div>
+                <strong>USB Data Recovery:</strong> Professional solutions for data loss on USB drives, including recovery from format errors, corruption, and physical damage.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-hdd"></i>
+              <div>
+                <strong>SD Card Data Recovery:</strong> Expert recovery of lost or deleted files from SD cards, addressing issues like corruption, accidental deletion, and formatting.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-hdd"></i>
+              <div>
+                <strong>RAID Recovery:</strong> Advanced recovery services for RAID arrays, handling data loss scenarios including drive failures, array corruption, and RAID configuration reconstruction.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-hdd"></i>
+              <div>
+                <strong>File Repair:</strong> Restoration of damaged or corrupted files, ensuring you can access important documents, photos, and videos.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-hdd"></i>
+              <div>
+                <strong>Data Backup Solutions:</strong> Implementation of reliable backup strategies to protect your data and prevent future losses. We offer both local and cloud backup solutions.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-hdd"></i>
+              <div>
+                <strong>Remote Data Recovery:</strong> Remote data recovery to resolve issues without physical contact, ideal for urgent situations and when physical access to the device is not possible.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-hdd"></i>
+              <div>
+                <strong>Consulting and Support:</strong> Expert advice on best practices for data recovery and ongoing technical support to help you effectively manage and protect your data.
+              </div>
+            </div>
+          </div>
+        `,
+        actions: `
+          <a href="https://www.paypal.com/ncp/payment/KZ2ZSLUPD8VFQ" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <span style="color: white; font-weight: bold;">Pay Advanced Data Recovery</span>
+          </a>
+          <a href="https://www.teamviewer.com/en-us/download/windows/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            Download TeamViewer Here
+          </a>
+        `
+      },
+      'asistencia-remota': {
+        title: 'Remote Help Desk Assistance',
+        icon: 'fas fa-headset',
+        content: `
+          <p>Access our Remote Assistance through TeamViewer for instant support with your computer problems and questions, all from the comfort of your home.</p>
+          
+          <div class="modal-features">
+            <div class="modal-feature">
+              <i class="fas fa-headset"></i>
+              <div>
+                <strong>Instant Remote Support:</strong> Real-time problem resolution and assistance for a wide range of computer issues, including software failures, system errors, and connectivity problems.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-headset"></i>
+              <div>
+                <strong>Software Installation and Configuration:</strong> Assistance with installing, configuring, and adjusting software applications to ensure they work properly on your system.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-headset"></i>
+              <div>
+                <strong>System Optimization:</strong> Remote performance tuning and optimization to improve the speed and efficiency of your computer.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-headset"></i>
+              <div>
+                <strong>Virus and Malware Removal:</strong> Remote scanning and removal of viruses, malware, and other malicious threats to protect your system and data.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-headset"></i>
+              <div>
+                <strong>Technical Advice and Guidance:</strong> Professional advice on troubleshooting techniques, software usage, and system maintenance to equip you with the knowledge needed to effectively manage your computer.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-headset"></i>
+              <div>
+                <strong>Backup and Data Recovery:</strong> Assistance with setting up data backup solutions and recovering lost or corrupted files remotely.
+              </div>
+            </div>
+          </div>
+        `,
+        actions: `
+          <a href="https://www.paypal.com/ncp/payment/RPYMTWGA5XU7L" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <span style="color: white; font-weight: bold;">Pay Remote Assistance</span>
+          </a>
+          <a href="https://www.teamviewer.com/en-us/download/windows/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            Download TeamViewer Here
+          </a>
+        `
+      },
+      'firmware-moviles': {
+        title: 'Firmware Updates and ROM Flashing',
+        icon: 'fas fa-mobile-alt',
+        content: `
+          <p>We offer comprehensive repair, maintenance, and update services for mobile phones, including:</p>
+          
+          <div class="modal-features">
+            <div class="modal-feature">
+              <i class="fas fa-mobile-alt"></i>
+              <div>
+                <strong>Firmware Updates:</strong> Installation of the latest firmware updates to improve performance, fix bugs, and add new features to your mobile phone.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-mobile-alt"></i>
+              <div>
+                <strong>ROM Flashing:</strong> Professional flashing of custom ROMs to customize your phone's software, improve performance, and unlock additional features.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-mobile-alt"></i>
+              <div>
+                <strong>Password and Software Unlocking:</strong> Assistance with unlocking forgotten passwords, bypassing software restrictions, and regaining access to your device.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-mobile-alt"></i>
+              <div>
+                <strong>System Recovery:</strong> Solutions for recovering your phone's operating system in case of software failures or corrupted systems.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-mobile-alt"></i>
+              <div>
+                <strong>Technical Support:</strong> Expert support to resolve issues related to firmware and ROM flashing, ensuring your phone operates smoothly.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-mobile-alt"></i>
+              <div>
+                <strong>Pre-Flashing Consultation:</strong> Professional consultation before performing firmware or ROM flashing to ensure compatibility and prevent potential issues.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-headset"></i>
+              <div>
+                <strong>Remote Support:</strong> Access our remote assistance through TeamViewer for instant support with problems and questions about your mobile phone, all from the comfort of your home.
+              </div>
+            </div>
+          </div>
+        `,
+        actions: `
+          <a href="https://www.paypal.com/ncp/payment/8RWMVEEPEEZ2G" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <span style="color: white; font-weight: bold;">Pay Mobile Repair Service</span>
+          </a>
+          <a href="https://play.google.com/store/search?q=team+viewer+quicksuport&c=apps&hl=es_419&gl=US&pli=1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            Download TeamViewer Here
+          </a>
+        `
+      },
+      'drones-aeroespacial': {
+        title: 'Autonomous Aerial Systems VTOL-UAV, Tactical FPV, ISR Platforms, C-UAS Systems',
+        icon: 'custom-icon-img',
+        image: 'images/drone.png',
+        content: `
+          <p>In collaboration with our partners, we offer next-generation VTOL UAV systems, C‑UAS platforms, tactical FPV drones, and autonomous ISR (EO/IR/ViDAR) platforms equipped with advanced artificial intelligence and specialized sensors. These solutions guarantee exceptional performance in surveillance, reconnaissance, and complex tactical operations for defense and security sector clients.</p>
+          
+          <div class="modal-features">
+            <div class="modal-feature">
+              <i class="fas fa-check"></i>
+              <div>
+                <strong>Through our partners, we provide next-generation autonomous VTOL UAV systems:</strong> Designed for businesses, government entities, and the defense sector, these systems offer vertical takeoff and landing for operations in compact and complex environments. Ideal for long-range surveillance, inspection, and monitoring missions beyond 200km.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-check"></i>
+              <div>
+                <strong>Next-Generation C-UAS Anti-Drone Systems:</strong> Advanced solutions for protection against unwanted drone threats. These systems are designed to detect, track, and neutralize unauthorized drones, ensuring security in critical areas and sensitive events.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-check"></i>
+              <div>
+                <strong>Tactical FPV Drones through Strategic Partners:</strong> We provide access to high-performance tactical FPV drones with autonomous terminal guidance for day or night operations to defense and security sectors through our network of strategic partners, ensuring our clients have the most advanced solutions to guarantee mission success.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-check"></i>
+              <div>
+                <strong>Advanced Autonomous ISR Platforms through Strategic Partners:</strong> We provide high-performance ISR (EO/IR) systems equipped with electro-optical and infrared sensors, real-time analysis capabilities, and advanced autonomy. These platforms enable continuous surveillance, reconnaissance, and monitoring in tactical and strategic operations, even in environments with intense electronic countermeasures. Their robust and modular design guarantees precise and reliable information for critical decision-making in defense and security missions.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-check"></i>
+              <div>
+                <strong>Strategic Consulting for Defense and Security Sector:</strong> We provide strategic consulting for the defense and security sector, guiding the acquisition, implementation, and/or updating of VTOL-UAV systems, C‑UAS platforms, tactical FPV drones, and next-generation autonomous ISR (EO/IR/ViDAR) platforms equipped with advanced artificial intelligence and specialized sensors, ensuring success in tactical operations and improving critical decision-making during missions.
+              </div>
+            </div>
+          </div>
+        `,
+        actions: `
+          <a href="https://www.paypal.com/ncp/payment/U8C7WBNH278JA" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            Pay UAV & ISR Consulting
+          </a>
+        `
+      },
+      'simulacion-vuelo': {
+        title: 'Advanced Flight Simulation Solutions',
+        icon: 'fas fa-fighter-jet',
+        content: `
+          <p>We offer cutting-edge flight simulation solutions, covering both software and hardware advancements to enhance your training and simulation experience.</p>
+          
+          <div class="modal-features">
+            <div class="modal-feature">
+              <i class="fas fa-fighter-jet"></i>
+              <div>
+                <strong>Comprehensive Flight Simulation Setup:</strong> Expert installation and configuration of advanced flight simulation systems, tailored to your specific needs, whether for professional training or personal use.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-fighter-jet"></i>
+              <div>
+                <strong>Custom Hardware Integration:</strong> Integration of the latest hardware components, including high-fidelity control systems, virtual reality (VR) configurations, and motion platforms, to provide a realistic and immersive flight experience.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-fighter-jet"></i>
+              <div>
+                <strong>Software Solutions:</strong> Installation, updates, and customization of top-tier flight simulation software, including FSX, Lockheed Martin's P3D, and X-Plane, ensuring compatibility and optimal performance for your simulation projects.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-fighter-jet"></i>
+              <div>
+                <strong>Platform Consulting:</strong> Professional advice to select the most suitable flight simulation platform based on your project scope, budget, and objectives. We guide you in choosing between FSX, P3D, X-Plane, and other systems to fit your needs.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-fighter-jet"></i>
+              <div>
+                <strong>Technical Support and Troubleshooting:</strong> Ongoing technical assistance to resolve any issues with your flight simulation setup, including software errors, hardware malfunctions, and performance optimization.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-fighter-jet"></i>
+              <div>
+                <strong>Training and Optimization:</strong> Customized training sessions to help you get the most out of your flight simulation system and optimization services to improve system performance and reliability.
+              </div>
+            </div>
+          </div>
+        `,
+        actions: `
+          <a href="https://www.paypal.com/ncp/payment/K77LVA25F22SS" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <span style="color: white; font-weight: bold;">Pay Flight Simulator Consulting</span>
+          </a>
+        `
+      },
+      'consultoria-aviation': {
+        title: 'Civil and Military Aviation Consulting',
+        icon: 'fas fa-plane',
+        content: `
+          <p>We offer civil and military aviation consulting services led by experts certified by the Federal Aviation Administration (FAA) and the Civil Aviation Authority of El Salvador.</p>
+          
+          <div class="modal-features">
+            <div class="modal-feature">
+              <i class="fas fa-plane"></i>
+              <div>
+                <strong>Certified Experts:</strong> Our team is composed of professionals certified by the FAA and the Civil Aviation Authority of El Salvador, guaranteeing the highest level of expertise and knowledge in the sector.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-plane"></i>
+              <div>
+                <strong>Cutting-Edge Technology:</strong> We use state-of-the-art technology, artificial intelligence, and data analysis to ensure the success of all your civil or military projects.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-plane"></i>
+              <div>
+                <strong>Strategic Decisions:</strong> Our team is dedicated to guiding you in making the best strategic decisions, optimizing resources, and maximizing results.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-plane"></i>
+              <div>
+                <strong>Expert Civil and Military Aviation Consulting:</strong> We offer civil and military aviation consulting services led by experts. Our team is dedicated to guiding you in making the best strategic decisions using cutting-edge technology, artificial intelligence, and data analysis to ensure the success of all your civil or military projects.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-plane"></i>
+              <div>
+                <strong>Aircraft Maintenance Software Solutions:</strong> We offer consulting services for the implementation and optimization of IT software for aircraft MROs (Maintenance, Repair, and Operations). Our team of experts is dedicated to providing advanced technological solutions that improve the efficiency and productivity of your aeronautical maintenance operations.
+              </div>
+            </div>
+          </div>
+        `,
+        actions: `
+          <a href="https://www.paypal.com/ncp/payment/VHF4GHANBWQVW" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <span style="color: white; font-weight: bold;">Pay Civil-Military Aviation Consulting</span>
+          </a>
+        `
+      },
+      'diseno-grafico': {
+        title: 'Graphic Design Services',
+        icon: 'fas fa-paint-brush',
+        content: `
+          <p>We offer a variety of professional graphic design services to meet all your visual needs.</p>
+          
+          <div class="modal-features">
+            <div class="modal-feature">
+              <i class="fas fa-paint-brush"></i>
+              <div>
+                <strong>Logo Design:</strong> Creation of unique and memorable logos that capture the essence of your brand and leave a lasting impression.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-paint-brush"></i>
+              <div>
+                <strong>Corporate Identity:</strong> Development of complete brand identities, including color schemes, typography, and visual style guides to ensure consistency across all platforms.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-paint-brush"></i>
+              <div>
+                <strong>Marketing Materials:</strong> Design of effective marketing materials such as brochures, flyers, business cards, and banners to promote your business.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-paint-brush"></i>
+              <div>
+                <strong>Web Design:</strong> Custom web design services to create visually appealing and user-friendly websites that engage your audience and enhance your online presence.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-paint-brush"></i>
+              <div>
+                <strong>Social Media Graphics:</strong> Design of eye-catching graphics for social media platforms to increase your brand's visibility and engagement.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-paint-brush"></i>
+              <div>
+                <strong>Infographics:</strong> Creation of informative and visually appealing infographics to convey complex information clearly and engagingly.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-paint-brush"></i>
+              <div>
+                <strong>Presentation Design:</strong> Creation of visually attractive and effective presentations for meetings, conferences, and corporate events, ensuring clear and professional communication.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-paint-brush"></i>
+              <div>
+                <strong>Interactive Experience Design:</strong> Development of interactive graphic experiences for websites and applications, enhancing user engagement through dynamic and attractive interfaces.
+              </div>
+            </div>
+          </div>
+        `,
+        actions: `
+          <a href="https://www.paypal.com/ncp/payment/H2QLUZV5LJMLW" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <span style="color: white; font-weight: bold;">Pay Graphic Design Services</span>
+          </a>
+        `
+      },
+      'digitalizacion-kizeo': {
+        title: 'Digitalization Solutions for Public and Private Entities with Kizeo',
+        icon: 'fas fa-mobile-alt',
+        content: `
+          <p>Drive the digital transformation of your organization with our strategic collaboration as an authorized Kizeo partner, a leader in innovative digital solutions.</p>
+          
+          <div class="modal-features">
+            <div class="modal-feature">
+              <i class="fas fa-mobile-alt"></i>
+              <div>
+                <strong>Custom Mobile Forms:</strong> Fully customizable formats for efficient data collection, even without internet connection, with automatic synchronization once connection is restored.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-file-alt"></i>
+              <div>
+                <strong>Custom Reports:</strong> Data collected through mobile forms can be automatically transformed into reports in formats like PDF, Word, or Excel. These reports are automatically sent to relevant parties according to your needs.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-plug"></i>
+              <div>
+                <strong>API Integrations:</strong> Kizeo allows integration with tools like Zapier, Make, Dropbox, DocuSign, and others, facilitating data flow between Kizeo and your existing business applications, enhancing your systems' interoperability.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <div>
+                <strong>Offline Mode:</strong> Data collection is possible even in remote areas without internet access, ensuring continuity in field work.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-database"></i>
+              <div>
+                <strong>Data Centralization:</strong> All collected data is centralized in an accessible platform for analysis and report generation, enabling efficient and consistent data management.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Custom Email Templates:</strong> Completed forms can trigger automatic email sending with generated reports, streamlining the distribution of key information.
+              </div>
+            </div>
+            <div class="modal-feature">
+              <i class="fas fa-bell"></i>
+              <div>
+                <strong>Push Notifications:</strong> Pre-filled forms can be sent to users with notifications, reminding them to complete and return forms on time.
+              </div>
+            </div>
+          </div>
+        `,
+        actions: `
+          <a href="https://www.kizeo-forms.com/lat/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <span style="color: white; font-weight: bold;">Go to Kizeo Forms</span>
+          </a>
+        `
+        },
+'software-lowcode-ia': {
+  title: 'AI-Driven Software Development',
+  icon: 'fas fa-brain',
+  content: `
+    <p>I develop intelligent applications that integrate artificial intelligence, automation, and modern APIs to solve real business challenges. Each solution is designed to optimize processes, enhance decision-making, and transform data into actionable insights.</p>
+    
+    <div class="modal-features">
+      
+      <div class="modal-feature">
+        <i class="fas fa-robot"></i>
+        <div>
+          <strong>AI Integration (OpenAI & APIs):</strong> Development of applications that leverage artificial intelligence models for data cleaning, text processing, automated responses, and real-time intelligent analysis.
+        </div>
+      </div>
+
+      <div class="modal-feature">
+        <i class="fas fa-map-marked-alt"></i>
+        <div>
+          <strong>Intelligent Geolocation:</strong> Implementation of systems that convert complex addresses into GPS coordinates using the Google Maps API, generating accurate and automated location links.
+        </div>
+      </div>
+
+      <div class="modal-feature">
+        <i class="fas fa-database"></i>
+        <div>
+          <strong>Automation with Google Sheets & Apps Script:</strong> Development of forms and systems connected to real-time spreadsheets for data registration, tracking, and automatic updates.
+        </div>
+      </div>
+
+      <div class="modal-feature">
+        <i class="fas fa-chart-bar"></i>
+        <div>
+          <strong>Dashboards & Data Visualization:</strong> Creation of dynamic dashboards displaying key metrics, process statuses, and automated analytics to support strategic decision-making.
+        </div>
+      </div>
+
+      <div class="modal-feature">
+        <i class="fas fa-cogs"></i>
+        <div>
+          <strong>Business Process Automation:</strong> Design of intelligent workflows that reduce manual tasks, minimize errors, and increase operational efficiency.
+        </div>
+      </div>
+
+      <div class="modal-feature">
+        <i class="fas fa-cloud"></i>
+        <div>
+          <strong>Scalable Cloud Solutions:</strong> Implementation of modern web applications (Node.js, REST APIs) ready for deployment in cloud environments with high availability.
+        </div>
+      </div>
+
+    </div>
+  `,
+  actions: `
+    <div class="text-center mt-4" data-aos="fade-up">
+      <a href="contact.html" class="btn-modern">
+        Request a Customized Quote
+      </a>
+    </div>
+  `
+},
+  };
+    
+    // Modal Functionality
+    const modal = document.getElementById('service-modal');
+    const closeModal = document.getElementById('close-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalIcon = document.getElementById('modal-icon');
+    const modalBody = document.getElementById('modal-body');
+    
+    // Open Modal
+    document.querySelectorAll('.open-modal').forEach(button => {
+      button.addEventListener('click', function() {
+        const serviceId = this.getAttribute('data-service');
+        const service = serviceData[serviceId];
+        
+        if (service) {
+          modalTitle.textContent = service.title;
+          
+          // Handle both Font Awesome icons and custom images
+          if (service.image) {
+            modalIcon.innerHTML = `<img src="${service.image}" alt="${service.title}" class="custom-icon-img">`;
+          } else {
+            modalIcon.innerHTML = `<i class="${service.icon}"></i>`;
+          }
+          
+          modalBody.innerHTML = `
+            ${service.content}
+            <div class="modal-actions">
+              ${service.actions}
+            </div>
+          `;
+          
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+    
+    // Close Modal
+    function closeServiceModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+    
+    closeModal.addEventListener('click', closeServiceModal);
+    
+    // Close modal when clicking outside content
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        closeServiceModal();
+      }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeServiceModal();
+      }
+    });
+    
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+  <!-- Disable right-click context menu -->
+<script>
+  (function() {
+    document.addEventListener('contextmenu', function(event) {
+      event.preventDefault();
+    });
+  })();
+</script>
+<!-- Disable F12 Key -->
+<script>
+  (function() {
+    document.addEventListener('keydown', function(event) {
+      if (event.keyCode === 123) { // F12
+        event.preventDefault();
+      }
+    });
+  })();
+</script>
+<!-- Disable Specific Key Combinations -->
+<script>
+  (function() {
+    document.addEventListener('keydown', function(event) {
+      // Check for Ctrl+Shift+I (F12 for tools)
+      if (event.ctrlKey && event.shiftKey && event.keyCode === 73) { // 73 is the keyCode for 'I'
+        event.preventDefault();
+      }
+      
+      // Check for Ctrl+U (View Source)
+      if (event.ctrlKey && event.keyCode === 85) { // 85 is the keyCode for 'U'
+        event.preventDefault();
+      }
+
+      // Check for Ctrl+Shift+J (Console)
+      if (event.ctrlKey && event.shiftKey && event.keyCode === 74) { // 74 is the keyCode for 'J'
+        event.preventDefault();
+      }
+    });
+  })();
+</script>
+<!-- Disable Ctrl+C -->
+<script>
+  (function() {
+    document.addEventListener('keydown', function(event) {
+      // Check for Ctrl+C (Copy)
+      if (event.ctrlKey && event.keyCode === 67) { // 67 is the keyCode for 'C'
+        event.preventDefault();
+      }
+    });
+  })();
+</script>
+</body>
+</html>

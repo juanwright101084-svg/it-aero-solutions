@@ -1,0 +1,1300 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Marconi IT & Aerospace Solutions</title>
+  <link rel="icon" href="images/favicon.png" type="image/gif">
+  
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <!-- AOS Animation -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- Google Fonts - MONTSSERRAT -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CALENDLY CSS -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-dark: #000000;
+      --secondary-dark: #0a0a0a;
+      --accent-blue: #00d4ff;
+      --accent-orange: #ff6b35;
+      --text-light: #ffffff;
+      --text-muted: #a0a0a0;
+      --border-color: #1a1a1a;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    /* CORRECCIONES CRÍTICAS PARA MÓVILES */
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    
+    body {
+      background: var(--primary-dark);
+      color: var(--text-light);
+      overflow-x: hidden;
+      padding-top: 140px; /* Reducido */
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    
+    /* Contenedores principales - CORREGIDO PARA MÓVILES */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* Logo Container */
+    .logo-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 2000;
+      padding: 0.7rem 0; /* Reducido */
+      min-height: 120px; /* Reducido */
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      width: 100%;
+    }
+    
+    .logo-img {
+      height: 80px; /* Reducido */
+      margin-right: 2rem;
+      transition: transform 0.3s ease;
+      max-width: 100%;
+    }
+    
+    .logo-img:hover {
+      transform: scale(1.05);
+    }
+    
+    .logo-slogan {
+      font-size: 0.9rem;
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 500;
+      line-height: 1.4;
+      max-width: 800px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* Navbar Moderna */
+    .modern-navbar {
+      background: rgba(0, 0, 0, 0.98);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 0.8rem 0;
+      position: fixed;
+      width: 100%;
+      top: 120px; /* Ajustado */
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .modern-navbar.scrolled {
+      padding: 0.4rem 0;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link {
+      color: var(--text-light) !important;
+      font-weight: 500;
+      font-size: 0.85rem; /* Reducido */
+      padding: 0.4rem 1rem !important;
+      transition: all 0.3s ease;
+      position: relative;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--text-light);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 80%;
+    }
+    
+    .nav-link:hover {
+      color: var(--text-light) !important;
+    }
+    
+    .lang-btn {
+      margin-left: 0.5rem;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    
+    .lang-btn:hover {
+      opacity: 1;
+    }
+    
+    /* Hero Section para Contacto */
+    .contact-hero {
+      position: relative;
+      height: 40vh; /* Reducido */
+      display: flex;
+      align-items: center;
+      margin-top: 50px; /* Reducido */
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.95) 100%);
+      width: 100%;
+    }
+    
+    .contact-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+    
+    .contact-hero-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      word-wrap: break-word;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .contact-hero-subtitle {
+      font-size: clamp(0.9rem, 1.8vw, 1.1rem); /* Reducido */
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      font-weight: 400;
+      font-family: 'Montserrat', sans-serif;
+      word-wrap: break-word;
+    }
+    
+    /* Contact Section */
+    .contact-section {
+      padding: 4rem 0;
+      background: var(--primary-dark);
+      width: 100%;
+    }
+    
+    .contact-container {
+      background: var(--secondary-dark);
+      border-radius: 15px; /* Reducido */
+      padding: 2rem; /* Reducido */
+      border: 1px solid var(--border-color);
+      box-shadow: 0 20px 60px rgba(255, 255, 255, 0.05);
+      width: 100%;
+    }
+    
+    .contact-info {
+      padding-right: 2rem;
+    }
+    
+    .contact-method {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem; /* Reducido */
+      padding: 1.2rem; /* Reducido */
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    
+    .contact-method:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-5px);
+    }
+    
+    .contact-icon {
+      width: 50px; /* Reducido */
+      height: 50px; /* Reducido */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      font-size: 1.2rem; /* Reducido */
+      color: var(--accent-blue);
+      margin-right: 1.2rem; /* Reducido */
+      flex-shrink: 0;
+    }
+    
+    .contact-details h4 {
+      font-size: 1.1rem; /* Reducido */
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-light);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .contact-details p {
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem; /* Agregado */
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .contact-details a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 0.9rem; /* Agregado */
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .contact-details a:hover {
+      color: var(--text-light);
+    }
+    
+    /* Form Styles */
+    .form-container {
+      padding-left: 2rem;
+    }
+    
+    .form-title {
+      font-size: 1.5rem; /* Reducido */
+      font-weight: 700;
+      margin-bottom: 1.2rem; /* Reducido */
+      color: var(--text-light);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .contact-form {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 1.8rem; /* Reducido */
+    }
+    
+    .form-group {
+      margin-bottom: 1.2rem; /* Reducido */
+    }
+    
+    .form-label {
+      color: var(--text-light);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem; /* Agregado */
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .form-control {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      color: var(--text-light);
+      padding: 0.7rem 1rem; /* Reducido */
+      transition: all 0.3s ease;
+      font-size: 0.9rem; /* Agregado */
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .form-control:focus {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 0.2rem rgba(0, 212, 255, 0.25);
+      color: var(--text-light);
+    }
+    
+    .form-control::placeholder {
+      color: var(--text-muted);
+    }
+    
+    textarea.form-control {
+      resize: vertical;
+      min-height: 100px; /* Reducido */
+    }
+    
+    /* Botones Modernizados - MEJORADOS PARA MÓVILES */
+    .btn-modern {
+      padding: 0.7rem 1.5rem;
+      font-size: 0.85rem; /* Reducido */
+      font-weight: 600;
+      border-radius: 50px;
+      border: 2px solid var(--text-light);
+      background: #000000;
+      color: var(--text-light);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.8rem;
+      margin-bottom: 0.4rem;
+      min-height: 44px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .btn-modern:hover {
+      background: #ff0000;
+      color: var(--text-light);
+      border-color: #ff0000;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+    }
+    
+    .btn-modern.outline {
+      background: transparent;
+      color: var(--text-light);
+      border-color: var(--text-light);
+    }
+    
+    .btn-modern.outline:hover {
+      background: #ff0000;
+      color: var(--text-light);
+      border-color: #ff0000;
+    }
+    
+    .btn-primary {
+      background: #000000 !important;
+      color: var(--text-light) !important;
+      border: 2px solid var(--text-light) !important;
+      border-radius: 50px !important;
+      padding: 0.7rem 1.5rem !important;
+      font-weight: 600 !important;
+      transition: all 0.3s ease !important;
+      font-size: 0.85rem;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .btn-primary:hover {
+      background: #ff0000 !important;
+      color: var(--text-light) !important;
+      border-color: #ff0000 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+    }
+    
+    /* Success Message */
+    .success-message {
+      display: none;
+      background: rgba(0, 255, 0, 0.1);
+      border: 1px solid rgba(0, 255, 0, 0.3);
+      border-radius: 10px;
+      padding: 1.2rem; /* Reducido */
+      margin-top: 1.5rem; /* Reducido */
+      text-align: center;
+      color: #00ff00;
+      animation: fadeIn 0.5s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Map Section */
+    .map-section {
+      padding: 0 0 4rem; /* Reducido */
+      background: var(--primary-dark);
+      width: 100%;
+    }
+    
+    .map-container {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+      height: 350px; /* Reducido */
+      width: 100%;
+    }
+    
+    /* Footer Modernizado */
+    .modern-footer {
+      background: var(--primary-dark);
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 0 1.5rem;
+      width: 100%;
+    }
+    
+    .footer-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      color: var(--text-light);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .footer-link {
+      display: block;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 0.6rem;
+      transition: all 0.3s ease;
+      font-size: 0.85rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .footer-link:hover {
+      color: var(--accent-blue);
+      padding-left: 5px;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-light);
+      margin-right: 0.6rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .social-links a:hover {
+      background: var(--text-light);
+      color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    
+    .footer-bottom {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding: 0 15px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* Ajustes específicos para pantallas grandes */
+    @media (min-width: 1400px) {
+      .container {
+        max-width: 1320px;
+      }
+    }
+    
+    /* Ajustes para pantallas medianas */
+    @media (max-width: 1200px) {
+      .container {
+        max-width: 1140px;
+      }
+      
+      .logo-img {
+        height: 95px;
+        margin-right: 1.8rem;
+      }
+      
+      .logo-slogan {
+        font-size: 0.85rem;
+      }
+      
+      body {
+        padding-top: 115px;
+      }
+      
+      .modern-navbar {
+        top: 115px;
+      }
+      
+      .logo-header {
+        padding: 0.9rem 0;
+        min-height: 115px;
+      }
+    }
+    
+    /* CORRECCIONES ESPECÍFICAS PARA MÓVILES */
+    
+    @media (max-width: 991px) {
+      .container {
+        max-width: 960px;
+      }
+      
+      .logo-img {
+        height: 90px;
+        margin-right: 1.5rem;
+      }
+      
+      .logo-slogan {
+        font-size: 0.8rem;
+      }
+      
+      body {
+        padding-top: 110px;
+      }
+      
+      .modern-navbar {
+        top: 110px;
+      }
+      
+      .logo-header {
+        padding: 0.8rem 0;
+        min-height: 110px;
+      }
+      
+      /* BOTÓN HAMBURGUESA SIN BORDE - CORREGIDO */
+      .navbar-toggler {
+        border: none;  /* ← SIN BORDE */
+        padding: 0.5rem;
+        z-index: 1001;
+        position: relative;
+        background: transparent;  /* ← SIN FONDO */
+      }
+      
+      .navbar-toggler:focus {
+        box-shadow: none;  /* ← SIN SOMBRA AL HACER FOCUS */
+      }
+      
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        width: 24px;
+        height: 24px;
+      }
+      
+      .navbar-collapse {
+        background: rgba(0, 0, 0, 0.98);
+        padding: 1.2rem;
+        margin-top: 0.8rem;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .nav-item {
+        margin: 0.4rem 0;
+      }
+      
+      .nav-link::after {
+        display: none;
+      }
+      
+      .contact-info {
+        padding-right: 0;
+        margin-bottom: 2.5rem;
+      }
+      
+      .form-container {
+        padding-left: 0;
+      }
+      
+      .contact-container {
+        padding: 1.5rem;
+      }
+      
+      .contact-hero-title {
+        font-size: 1.8rem;
+      }
+    }
+    
+    /* Móviles grandes - CORREGIDO */
+    @media (max-width: 768px) {
+      /* Reset general para móviles */
+      body {
+        padding-top: 150px;
+        width: 100%;
+        overflow-x: hidden;
+      }
+      
+      .container {
+        padding: 0 10px;
+        max-width: 100%;
+      }
+      
+      /* Header y Navbar */
+      .logo-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 10px;
+      }
+      
+      .logo-img {
+        height: 85px;
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+        max-width: 100%;
+      }
+      
+      .logo-slogan {
+        font-size: 0.75rem;
+        letter-spacing: 1.2px;
+        text-align: center;
+        padding: 0 5px;
+      }
+      
+      .logo-header {
+        padding: 0.7rem 0;
+        min-height: 150px;
+      }
+      
+      .modern-navbar {
+        top: 150px;
+        padding: 0.8rem 10px;
+      }
+      
+      /* Hero Section */
+      .contact-hero {
+        height: auto;
+        padding: 4rem 0 2rem;
+        margin-top: 40px;
+      }
+      
+      .contact-hero-title {
+        font-size: 1.7rem;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        text-align: center;
+        padding: 0 5px;
+      }
+      
+      .contact-hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        text-align: justify;
+        padding: 0 5px;
+      }
+      
+      /* Contact Section */
+      .contact-section {
+        padding: 2.5rem 0;
+      }
+      
+      .contact-container {
+        padding: 1.5rem;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      
+      .contact-method {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      
+      .contact-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+      }
+      
+      .contact-form {
+        padding: 1.5rem;
+      }
+      
+      .btn-modern,
+      .btn-primary {
+        display: block;
+        width: 100%;
+        margin: 0.4rem 0;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+      }
+      
+      /* Map Section */
+      .map-section {
+        padding: 0 0 2.5rem;
+      }
+      
+      .map-container {
+        height: 300px;
+      }
+      
+      /* Footer */
+      .modern-footer {
+        padding: 2.5rem 0 1.2rem;
+      }
+      
+      .footer-bottom {
+        padding: 0 10px;
+      }
+    }
+    
+    /* Móviles pequeños - CORREGIDO */
+    @media (max-width: 576px) {
+      body {
+        padding-top: 140px;
+      }
+      
+      .container {
+        padding: 0 8px;
+      }
+      
+      .logo-img {
+        height: 80px;
+      }
+      
+      .logo-slogan {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+      }
+      
+      .logo-header {
+        padding: 0.7rem 0;
+        min-height: 140px;
+      }
+      
+      .modern-navbar {
+        top: 140px;
+        padding: 0.8rem 8px;
+      }
+      
+      .contact-hero-title {
+        font-size: 1.4rem;
+      }
+      
+      .contact-hero-subtitle {
+        font-size: 0.8rem;
+      }
+      
+      .contact-container {
+        padding: 1.2rem;
+      }
+      
+      .btn-modern,
+      .btn-primary {
+        font-size: 0.85rem;
+        padding: 0.7rem 1.2rem;
+      }
+      
+      .social-links a {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+      }
+      
+      .footer-title {
+        font-size: 1rem;
+      }
+      
+      .map-container {
+        height: 250px;
+      }
+    }
+    
+    /* Móviles muy pequeños - CORREGIDO */
+    @media (max-width: 400px) {
+      .container {
+        padding: 0 5px;
+      }
+      
+      .logo-img {
+        height: 70px;
+      }
+      
+      .logo-slogan {
+        font-size: 0.65rem;
+      }
+      
+      body {
+        padding-top: 140px;
+      }
+      
+      .modern-navbar {
+        top: 140px;
+      }
+      
+      .logo-header {
+        padding: 0.6rem 0;
+        min-height: 140px;
+      }
+      
+      .contact-hero-title {
+        font-size: 1.3rem;
+      }
+      
+      .contact-hero-subtitle {
+        font-size: 0.75rem;
+      }
+    }
+    
+    /* Scroll Animations */
+    [data-aos] {
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo Header -->
+  <header class="logo-header">
+    <div class="logo-container">
+      <img src="images/portada.png" alt="Marconi IT" class="logo-img">
+      <div class="logo-slogan">Prime solutions of tomorrow, delivered with top-notch service and affordability through Artificial Intelligence</div>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="modern-navbar navbar navbar-expand-lg">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="service.html">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">Sobre Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="why.html">¿Por qué Elegirnos?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="contact.html">Contacto</a>
+          </li>
+          <!-- ENLACE CALENDLY -->
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/marconix2010'});return false;">
+              <i class="far fa-calendar-alt"></i> Agenda
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.flightradar24.com" target="_blank">
+              <i class="fas fa-plane" style="color: var(--accent-orange);"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/es/contact.html" class="lang-btn">
+              <img src="images/es-flag.png" alt="ES" style="width: 20px;">
+            </a>
+            <a href="/en/contact.html" class="lang-btn">
+              <img src="images/us-flag.png" alt="EN" style="width: 20px;">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section para Contacto -->
+  <section class="contact-hero">
+    <div class="container contact-hero-content" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h1 class="contact-hero-title">Contáctenos</h1>
+          <p class="contact-hero-subtitle">
+            Estamos aquí para ayudarle. Póngase en contacto con nosotros para consultas, cotizaciones o cualquier pregunta sobre nuestros servicios.
+          </p>
+          <div class="hero-buttons">
+            <a href="#contact-form" class="btn-modern">Enviar Mensaje</a>
+            <a href="service.html" class="btn-modern outline">Nuestros Servicios</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="contact-info">
+              <h2 class="form-title">Información de Contacto</h2>
+              <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.9rem;">
+                No dude en contactarnos a través de cualquiera de los siguientes medios. Estaremos encantados de atenderle.
+              </p>
+              
+              <div class="contact-method" data-aos="fade-right" data-aos-delay="100">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Ubicación</h4>
+                  <p>San Salvador, El Salvador</p>
+                  <a href="https://www.google.com/maps?q=13.776666765116644,-89.11043486858881" target="_blank">
+                    Ver en Google Maps
+                  </a>
+                </div>
+              </div>
+              
+              <div class="contact-method" data-aos="fade-right" data-aos-delay="200">
+                <div class="contact-icon">
+                  <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>WhatsApp</h4>
+                  <p>Disponible 24/7 para consultas</p>
+                  <a href="https://wa.me/50360649822" target="_blank">
+                    +503 6064-9822
+                  </a>
+                </div>
+              </div>
+              
+              <div class="contact-method" data-aos="fade-right" data-aos-delay="300">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Correo Electrónico</h4>
+                  <p>Respondemos en menos de 24 horas</p>
+                  <a href="mailto:marconiitaero@outlook.com">
+                    marconiitaero@outlook.com
+                  </a>
+                </div>
+              </div>
+              
+              <div class="contact-method" data-aos="fade-right" data-aos-delay="400">
+                <div class="contact-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Horario de Atención</h4>
+                  <p>Lunes - Sábado: 9:00 AM - 6:00 PM</p>
+                  <p>Domingo: Cerrado</p>
+                </div>
+              </div>
+              
+              <div class="mt-4">
+                <h4 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1rem;">Síganos en Redes Sociales</h4>
+                <div class="social-links">
+                  <a href="https://www.facebook.com/people/Marconi-It-and-Aerospace-Solutions/61561953869305/" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="https://twitter.com/TuUsuarioDeTwitter" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/company/marconi-it-and-aerospace-solutions" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a href="https://www.instagram.com/juanpablox2017/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-7">
+            <div class="form-container">
+              <h2 class="form-title" id="contact-form">Envíenos un Mensaje</h2>
+              <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.9rem;">
+                Complete el siguiente formulario y nos pondremos en contacto con usted a la brevedad.
+              </p>
+              
+              <form id="miFormulario" action="https://formspree.io/f/mvonozko" method="POST" onsubmit="submitForm(event)" class="contact-form">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="nombre" class="form-label">Nombre *</label>
+                      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="apellido" class="form-label">Apellido *</label>
+                      <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese su apellido" required>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="telefono" class="form-label">Teléfono *</label>
+                      <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Ingrese su teléfono" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="email" class="form-label">Correo Electrónico *</label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico" required>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="comentario" class="form-label">Mensaje *</label>
+                  <textarea class="form-control" id="comentario" name="comentario" rows="5" placeholder="Describa su consulta o requerimiento..." required></textarea>
+                </div>
+                
+                <button class="btn btn-primary" type="submit">Enviar Mensaje</button>
+              </form>
+              
+              <div id="mensajeConfirmacion" class="success-message">
+                <i class="fas fa-check-circle" style="font-size: 1.8rem; margin-bottom: 1rem;"></i>
+                <h4 style="color: #00ff00; margin-bottom: 0.5rem; font-size: 1.1rem;">¡Mensaje Enviado Exitosamente!</h4>
+                <p style="font-size: 0.9rem;">Gracias por contactarnos. Nos pondremos en contacto con usted en breve.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up" style="font-size: 1.8rem;">Nuestra Ubicación</h2>
+      <div class="map-container" data-aos="zoom-in">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.962710385393!2d-89.119303!3d13.7811215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f633988433020d7%3A0x56e97c1c284c9803!2sMarconi%20IT%20Solutions!5e0!3m2!1ses!2ssv!4v1672380912278!5m2!1ses!2ssv" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="modern-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h4 class="footer-title">Sobre Nosotros</h4>
+          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem;">
+            Nos especializamos en ofrecer soluciones de vanguardia en tecnología de la información y aeroespaciales adaptadas a sus necesidades, siempre cuidando su presupuesto.
+          </p>
+          <div class="social-links mt-4">
+            <a href="https://www.facebook.com/people/Marconi-It-and-Aerospace-Solutions/61561953869305/" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/TuUsuarioDeTwitter" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/marconi-it-and-aerospace-solutions" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/juanpablox2017/" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-4 mb-4">
+          <h4 class="footer-title">Links Rápidos</h4>
+          <a href="index.html" class="footer-link">Inicio</a>
+          <a href="service.html" class="footer-link">Servicios</a>
+          <a href="about.html" class="footer-link">Sobre Nosotros</a>
+          <a href="why.html" class="footer-link">¿Por qué Elegirnos?</a>
+          <a href="contact.html" class="footer-link">Contacto</a>
+          <a class="footer-link" href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/marconix2010'});return false;">Agenda una cita</a>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h4 class="footer-title">Contacto</h4>
+          <div style="color: var(--text-muted); line-height: 2; font-size: 0.9rem;">
+            <p>
+              <i class="fas fa-map-marker-alt" style="color: var(--accent-blue); margin-right: 10px;"></i>
+              <a href="https://www.google.com/maps?q=13.776666765116644,-89.11043486858881" target="_blank" style="color: var(--text-muted); text-decoration: none;">
+                Ver Ubicación
+              </a>
+            </p>
+            <p>
+              <i class="fab fa-whatsapp" style="color: var(--accent-blue); margin-right: 10px;"></i>
+              <a href="https://wa.me/50360649822" target="_blank" style="color: var(--text-muted); text-decoration: none;">
+                +503 6064-9822
+              </a>
+            </p>
+            <p>
+              <i class="fas fa-envelope" style="color: var(--accent-blue); margin-right: 10px;"></i>
+              <a href="mailto:marconiitaero@outlook.com" style="color: var(--text-muted); text-decoration: none;">
+                marconiitaero@outlook.com
+              </a>
+            </p>
+            <p>
+              <i class="fas fa-clock" style="color: var(--accent-blue); margin-right: 10px;"></i>
+              Lun-Sáb: 09:00 - 18:00
+            </p>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h4 class="footer-title">Ubicación</h4>
+          <div style="border-radius: 15px; overflow: hidden; height: 180px;">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.962710385393!2d-89.119303!3d13.7811215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f633988433020d7%3A0x56e97c1c284c9803!2sMarconi%20IT%20Solutions!5e0!3m2!1ses!2ssv!4v1672380912278!5m2!1ses!2ssv" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="displayYear"></span> Marconi IT & Aerospace Solutions. Todos los derechos reservados. Diseñado por <a href="#" style="color: var(--accent-blue); text-decoration: none;">Juan Guzman</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  
+  <!-- CALENDLY SCRIPT -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <!-- Chatbot -->
+  <script src="//code.tidio.co/mhiuatzylewxjbkmtcdfjsibvjbx0txp.js" async></script>
+  <div class="tidio-chat"></div>
+  
+  <script>
+    // AOS Init
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 100
+    });
+    
+    // Display Year
+    document.getElementById('displayYear').textContent = new Date().getFullYear();
+    
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.modern-navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // Form Submission
+    function submitForm(event) {
+      event.preventDefault(); // Prevenir el envío del formulario de la forma tradicional
+
+      const form = event.target;
+
+      // Crear una solicitud AJAX para enviar el formulario
+      const xhr = new XMLHttpRequest();
+      xhr.open(form.method, form.action, true);
+      xhr.setRequestHeader("Accept", "application/json");
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState !== XMLHttpRequest.DONE) return;
+          if (xhr.status === 200) {
+              form.reset(); // Limpiar los campos del formulario
+
+              const mensajeConfirmacion = document.getElementById("mensajeConfirmacion");
+              mensajeConfirmacion.style.display = "block"; // Mostrar el mensaje de confirmación
+
+              // Ocultar el mensaje después de 5 segundos
+              setTimeout(() => {
+                  mensajeConfirmacion.style.display = "none";
+              }, 5000);
+          } else {
+              alert("Ocurrió un error al enviar el formulario. Por favor, inténtalo nuevamente.");
+          }
+      };
+      const formData = new FormData(form);
+      xhr.send(formData);
+    }
+    
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+
+  <!-- Scripts de protección (mantenidos igual) -->
+  <script>
+    (function() {
+      document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+      });
+    })();
+  </script>
+  <script>
+    (function() {
+      document.addEventListener('keydown', function(event) {
+        if (event.keyCode === 123) {
+          event.preventDefault();
+        }
+      });
+    })();
+  </script>
+  <script>
+    (function() {
+      document.addEventListener('keydown', function(event) {
+        if (event.ctrlKey && event.shiftKey && event.keyCode === 73) {
+          event.preventDefault();
+        }
+        
+        if (event.ctrlKey && event.keyCode === 85) {
+          event.preventDefault();
+        }
+
+        if (event.ctrlKey && event.shiftKey && event.keyCode === 74) {
+          event.preventDefault();
+        }
+      });
+    })();
+  </script>
+  <script>
+    (function() {
+      document.addEventListener('keydown', function(event) {
+        if (event.ctrlKey && event.keyCode === 67) {
+          event.preventDefault();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

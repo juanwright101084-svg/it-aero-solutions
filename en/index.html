@@ -1,0 +1,2090 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Marconi IT & Aerospace Solutions</title>
+  <link rel="icon" href="images/favicon.png" type="image/gif">
+  
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <!-- AOS Animation -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- Google Fonts - Cambiado a Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- CALENDLY CSS - CORRECCIÓN AGREGADA -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-dark: #000000;
+      --secondary-dark: #0a0a0a;
+      --accent-blue: #00d4ff;
+      --accent-orange: #ff6b35;
+      --text-light: #ffffff;
+      --text-muted: #a0a0a0;
+      --border-color: #1a1a1a;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    /* CORRECCIONES CRÍTICAS PARA MÓVILES */
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    
+    body {
+      font-size: 14px;
+      background: var(--primary-dark);
+      color: var(--text-light);
+      overflow-x: hidden;
+      padding-top: 140px;
+    }
+    
+    /* Contenedores principales - CORREGIDO PARA MÓVILES */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* Logo Container */
+    .logo-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 2000;
+      padding: 1rem 0;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+      width: 100%;
+    }
+    
+    .logo-img {
+      height: 100px;
+      margin-right: 2rem;
+      transition: transform 0.3s ease;
+      max-width: 100%;
+    }
+    
+    .logo-img:hover {
+      transform: scale(1.05);
+    }
+    
+    .logo-slogan {
+      font-size: 0.9rem;
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 400;
+      line-height: 1.4;
+      max-width: 800px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* Navbar */
+    .modern-navbar {
+      background: rgba(0, 0, 0, 0.98);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 0.8rem 0;
+      position: fixed;
+      width: 100%;
+      top: 120px;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .modern-navbar.scrolled {
+      padding: 0.4rem 0;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link {
+      color: var(--text-light) !important;
+      font-weight: 500;
+      font-size: 0.85rem;
+      padding: 0.4rem 1rem !important;
+      transition: all 0.3s ease;
+      position: relative;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--text-light);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 80%;
+    }
+    
+    .lang-btn {
+      margin-left: 0.5rem;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    
+    .lang-btn:hover {
+      opacity: 1;
+    }
+    
+    /* Hero Section - CORREGIDO PARA MÓVILES */
+    .hero-section {
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      margin-top: 50px;
+      overflow: hidden;
+      background: var(--primary-dark);
+      padding: 3rem 0;
+      width: 100%;
+    }
+    
+    .hero-container-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 15px;
+      width: 100%;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+    
+    .hero-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      word-wrap: break-word;
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      word-wrap: break-word;
+    }
+    
+    /* Video Container */
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
+      border: 2px solid rgba(0, 212, 255, 0.2);
+    }
+    
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
+      pointer-events: none;
+    }
+
+    /* Botones Modernizados - MEJORADOS PARA MÓVILES */
+    .btn-modern {
+      padding: 0.7rem 1.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 50px;
+      border: 2px solid var(--text-light);
+      background: #000000;
+      color: var(--text-light);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.8rem;
+      margin-bottom: 0.4rem;
+      min-height: 44px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .btn-modern:hover {
+      background: var(--accent-orange);
+      color: var(--text-light);
+      border-color: var(--accent-orange);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+    }
+
+    .btn-modern.outline {
+      background: transparent;
+      color: var(--text-light);
+      border-color: var(--text-light);
+    }
+
+    .btn-modern.outline:hover {
+      background: var(--accent-orange);
+      color: var(--text-light);
+      border-color: var(--accent-orange);
+    }
+
+    .btn-primary {
+      background: #000000 !important;
+      color: var(--text-light) !important;
+      border: 2px solid var(--text-light) !important;
+      border-radius: 50px !important;
+      padding: 0.7rem 1.5rem !important;
+      font-weight: 600 !important;
+      transition: all 0.3s ease !important;
+      font-size: 0.85rem;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-orange) !important;
+      color: var(--text-light) !important;
+      border-color: var(--accent-orange) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent !important;
+      color: var(--text-light) !important;
+      border: 2px solid var(--text-light) !important;
+      border-radius: 50px !important;
+      padding: 0.7rem 1.5rem !important;
+      font-weight: 600 !important;
+      transition: all 0.3s ease !important;
+      font-size: 0.85rem;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .btn-secondary:hover {
+      background: var(--accent-orange) !important;
+      color: var(--text-light) !important;
+      border-color: var(--accent-orange) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+    }
+    
+    /* Modern Carousel Section */
+    .modern-carousel {
+      padding: 4rem 0;
+      background: var(--secondary-dark);
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+    
+    .carousel-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 0 15px;
+    }
+    
+    .carousel-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      line-height: 1.6;
+      padding: 0 15px;
+    }
+    
+    #servicesCarousel {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+      max-width: 1200px;
+      margin: 0 auto;
+      width: calc(100% - 30px);
+    }
+    
+    .carousel-item {
+      height: 400px;
+      position: relative;
+    }
+    
+    .carousel-card {
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    
+    .carousel-card img,
+    .carousel-card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .carousel-card:hover img,
+    .carousel-card:hover video {
+      transform: scale(1.05);
+    }
+    
+    .carousel-card-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+      padding: 2.5rem 1.5rem 1.5rem;
+      color: white;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+    
+    .carousel-card:hover .carousel-card-overlay {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .carousel-card-overlay h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .carousel-indicators {
+      bottom: 15px;
+    }
+    
+    .carousel-indicators button {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin: 0 4px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border: none;
+    }
+    
+    .carousel-indicators button.active {
+      background-color: var(--accent-blue);
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 50px;
+      height: 50px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0 15px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    #servicesCarousel:hover .carousel-control-prev,
+    #servicesCarousel:hover .carousel-control-next {
+      opacity: 1;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 20px;
+      height: 20px;
+    }
+    
+    /* Features Section */
+    .features-section {
+      padding: 4rem 0;
+      background: var(--primary-dark);
+      width: 100%;
+    }
+    
+    .section-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 0 15px;
+    }
+    
+    .section-title span {
+      color: var(--accent-blue);
+    }
+    
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      line-height: 1.6;
+      padding: 0 15px;
+    }
+    
+    .feature-card {
+      background: var(--secondary-dark);
+      border-radius: 15px;
+      padding: 2rem;
+      border: 1px solid var(--border-color);
+      height: 100%;
+      transition: all 0.3s ease;
+      margin-bottom: 1.5rem;
+      width: 100%;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.05);
+      border-color: var(--accent-blue);
+    }
+    
+    .feature-icon {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      font-size: 1.8rem;
+      color: var(--accent-blue);
+      margin-bottom: 1.2rem;
+    }
+    
+    .feature-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      color: var(--text-light);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .feature-description {
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 0.9rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* About Preview Section */
+    .about-section {
+      padding: 4rem 0;
+      background: var(--secondary-dark);
+      width: 100%;
+    }
+    
+    .about-container {
+      background: var(--primary-dark);
+      border-radius: 15px;
+      padding: 2.5rem;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 15px 40px rgba(255, 255, 255, 0.05);
+      width: 100%;
+    }
+    
+    .about-content h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      color: var(--text-light);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .about-content p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+      font-size: 0.9rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* Services Preview Section */
+    .services-section {
+      padding: 4rem 0;
+      background: var(--primary-dark);
+      width: 100%;
+    }
+    
+    .service-card {
+      background: var(--secondary-dark);
+      border-radius: 12px;
+      padding: 1.8rem;
+      border: 1px solid var(--border-color);
+      height: 100%;
+      transition: all 0.3s ease;
+      margin-bottom: 1.5rem;
+      width: 100%;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(255, 255, 255, 0.05);
+      border-color: var(--accent-blue);
+    }
+    
+    .service-icon {
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      font-size: 1.4rem;
+      color: var(--accent-blue);
+      margin-bottom: 1.2rem;
+    }
+    
+    .service-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      color: var(--text-light);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .service-description {
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+      font-size: 0.9rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* Why Choose Us Section */
+    .why-section {
+      padding: 4rem 0;
+      background: var(--secondary-dark);
+      width: 100%;
+    }
+    
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      padding: 1.2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    
+    .benefit-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-3px);
+    }
+    
+    .benefit-icon {
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      font-size: 1.4rem;
+      color: var(--accent-blue);
+      margin-right: 1.2rem;
+      flex-shrink: 0;
+    }
+    
+    .benefit-details h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text-light);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .benefit-details p {
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* News Section */
+    .news-section {
+      padding: 4rem 0;
+      background: var(--primary-dark);
+      width: 100%;
+    }
+    
+    .news-card {
+      background: var(--secondary-dark);
+      border-radius: 15px;
+      padding: 2rem;
+      border: 1px solid var(--border-color);
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+    
+    .news-card:hover {
+      border-color: var(--accent-blue);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 212, 255, 0.1);
+    }
+    
+    .news-image-container {
+      height: 140px;
+      overflow: hidden;
+      border-radius: 6px;
+      background: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.8rem;
+    }
+    
+    .news-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .news-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 0.6rem;
+      line-height: 1.4;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .news-description {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 0.8rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .news-source {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+    }
+    
+    .source-name {
+      color: var(--accent-blue);
+      font-size: 0.75rem;
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .news-date {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .news-link {
+      color: var(--text-light);
+      text-decoration: none;
+      display: block;
+      height: 100%;
+    }
+    
+    .news-link:hover {
+      text-decoration: none;
+      color: var(--text-light);
+    }
+    
+    .news-loader {
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--text-muted);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .news-category {
+      background: var(--accent-blue);
+      color: var(--primary-dark);
+      padding: 0.2rem 0.6rem;
+      border-radius: 15px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      padding: 4rem 0;
+      background: var(--secondary-dark);
+      width: 100%;
+    }
+    
+    .cta-container {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    .cta-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      color: var(--text-light);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .cta-description {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* Footer */
+    .modern-footer {
+      background: var(--primary-dark);
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 0 1.5rem;
+      width: 100%;
+    }
+    
+    .footer-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      color: var(--text-light);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .footer-link {
+      display: block;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 0.6rem;
+      transition: all 0.3s ease;
+      font-size: 0.85rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .footer-link:hover {
+      color: var(--accent-blue);
+      padding-left: 5px;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-light);
+      margin-right: 0.6rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .social-links a:hover {
+      background: var(--text-light);
+      color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    
+    .footer-bottom {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding: 0 15px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* Ajustes específicos para pantallas grandes */
+    @media (min-width: 1400px) {
+      .container {
+        max-width: 1320px;
+      }
+    }
+    
+    /* Ajustes para pantallas medianas */
+    @media (max-width: 1200px) {
+      .container {
+        max-width: 1140px;
+      }
+      
+      .logo-img {
+        height: 90px;
+        margin-right: 1.8rem;
+      }
+      
+      .logo-slogan {
+        font-size: 0.85rem;
+      }
+      
+      body {
+        padding-top: 130px;
+      }
+      
+      .modern-navbar {
+        top: 130px;
+      }
+      
+      .logo-header {
+        padding: 0.9rem 0;
+        min-height: 130px;
+      }
+    }
+    
+    /* CORRECCIONES ESPECÍFICAS PARA MÓVILES */
+    
+    @media (max-width: 991px) {
+      .container {
+        max-width: 960px;
+      }
+      
+      .hero-container-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      
+      .video-container {
+        height: 400px;
+      }
+      
+      .logo-img {
+        height: 85px;
+        margin-right: 1.5rem;
+      }
+      
+      .logo-slogan {
+        font-size: 0.8rem;
+      }
+      
+      body {
+        padding-top: 120px;
+      }
+      
+      .modern-navbar {
+        top: 120px;
+      }
+      
+      .logo-header {
+        padding: 0.8rem 0;
+        min-height: 120px;
+      }
+      
+      /* BOTÓN HAMBURGUESA SIN BORDE - CORREGIDO */
+      .navbar-toggler {
+        border: none;  /* ← SIN BORDE */
+        padding: 0.5rem;
+        z-index: 1001;
+        position: relative;
+        background: transparent;  /* ← SIN FONDO */
+      }
+      
+      .navbar-toggler:focus {
+        box-shadow: none;  /* ← SIN SOMBRA AL HACER FOCUS */
+      }
+      
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        width: 24px;
+        height: 24px;
+      }
+      
+      .navbar-collapse {
+        background: rgba(0, 0, 0, 0.98);
+        padding: 1.2rem;
+        margin-top: 0.8rem;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);  /* ← Borde sutil para el menú */
+      }
+      
+      .nav-item {
+        margin: 0.4rem 0;
+      }
+      
+      .nav-link::after {
+        display: none;
+      }
+      
+      .carousel-item {
+        height: 350px;
+      }
+    }
+    
+    /* Móviles grandes - CORREGIDO */
+    @media (max-width: 768px) {
+      /* Reset general para móviles */
+      body {
+        padding-top: 150px;
+        width: 100%;
+        overflow-x: hidden;
+      }
+      
+      .container {
+        padding: 0 10px;
+        max-width: 100%;
+      }
+      
+      /* Header y Navbar */
+      .logo-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 10px;
+      }
+      
+      .logo-img {
+        height: 80px;
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+        max-width: 100%;
+      }
+      
+      .logo-slogan {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        text-align: center;
+        padding: 0 5px;
+      }
+      
+      .logo-header {
+        padding: 0.8rem 0;
+        min-height: 150px;
+      }
+      
+      .modern-navbar {
+        top: 150px;
+        padding: 0.8rem 10px;
+      }
+      
+      /* Hero Section */
+      .hero-section {
+        padding: 2.5rem 0;
+        margin-top: 40px;
+        min-height: auto;
+      }
+      
+      .hero-container-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 10px;
+      }
+      
+      .video-container {
+        height: 250px;
+        order: -1;
+      }
+      
+      .hero-title {
+        font-size: 1.6rem;
+        text-align: center;
+        padding: 0 5px;
+      }
+      
+      .hero-subtitle {
+        font-size: 0.9rem;
+        text-align: justify;
+        padding: 0 5px;
+      }
+      
+      .hero-buttons {
+        text-align: center;
+        padding: 0 10px;
+      }
+      
+      .btn-modern {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+      }
+      
+      /* Secciones generales */
+      .modern-carousel,
+      .features-section,
+      .about-section,
+      .services-section,
+      .why-section,
+      .news-section,
+      .cta-section {
+        padding: 2.5rem 0;
+      }
+      
+      .section-title,
+      .carousel-title,
+      .cta-title {
+        font-size: 1.5rem;
+        padding: 0 10px;
+      }
+      
+      .section-subtitle,
+      .carousel-subtitle,
+      .cta-description {
+        font-size: 0.9rem;
+        padding: 0 10px;
+      }
+      
+      /* Cards y contenedores */
+      .feature-card,
+      .about-container,
+      .service-card,
+      .news-card {
+        padding: 1.5rem;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      
+      .about-container {
+        margin: 0 10px;
+      }
+      
+      /* Carousel */
+      #servicesCarousel {
+        width: calc(100% - 20px);
+        margin: 0 10px;
+      }
+      
+      .carousel-item {
+        height: 250px;
+      }
+      
+      .carousel-card-overlay {
+        padding: 1.5rem 1rem 1rem;
+      }
+      
+      .carousel-card-overlay h3 {
+        font-size: 1.1rem;
+      }
+      
+      /* Benefit items */
+      .benefit-item {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      
+      .benefit-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+      }
+      
+      /* Footer */
+      .modern-footer {
+        padding: 2.5rem 0 1.2rem;
+      }
+      
+      .footer-bottom {
+        padding: 0 10px;
+      }
+    }
+    
+    /* Móviles pequeños - CORREGIDO */
+    @media (max-width: 576px) {
+      body {
+        padding-top: 140px;
+      }
+      
+      .container {
+        padding: 0 8px;
+      }
+      
+      .logo-img {
+        height: 70px;
+      }
+      
+      .logo-slogan {
+        font-size: 0.7rem;
+        letter-spacing: 0.8px;
+      }
+      
+      .logo-header {
+        padding: 0.7rem 0;
+        min-height: 140px;
+      }
+      
+      .modern-navbar {
+        top: 140px;
+        padding: 0.8rem 8px;
+      }
+      
+      .hero-container-grid {
+        padding: 0 8px;
+        gap: 1.5rem;
+      }
+      
+      .video-container {
+        height: 200px;
+      }
+      
+      .hero-title {
+        font-size: 1.4rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 0.85rem;
+      }
+      
+      .feature-card,
+      .about-container,
+      .service-card,
+      .news-card {
+        padding: 1.2rem;
+      }
+      
+      .btn-modern {
+        font-size: 0.8rem;
+        padding: 0.7rem 1rem;
+      }
+      
+      .carousel-item {
+        height: 200px;
+      }
+      
+      #servicesCarousel {
+        width: calc(100% - 16px);
+        margin: 0 8px;
+      }
+    }
+    
+    /* Móviles muy pequeños - CORREGIDO */
+    @media (max-width: 400px) {
+      .container {
+        padding: 0 5px;
+      }
+      
+      .logo-img {
+        height: 60px;
+      }
+      
+      .logo-slogan {
+        font-size: 0.65rem;
+      }
+      
+      body {
+        padding-top: 140px;
+      }
+      
+      .modern-navbar {
+        top: 140px;
+      }
+      
+      .logo-header {
+        padding: 0.6rem 0;
+        min-height: 140px;
+      }
+      
+      .hero-title {
+        font-size: 1.3rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 0.8rem;
+      }
+      
+      #servicesCarousel {
+        width: calc(100% - 10px);
+        margin: 0 5px;
+      }
+    }
+    
+    /* Scroll Animations */
+    [data-aos] {
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo Header - Más compacto -->
+  <header class="logo-header">
+    <div class="logo-container">
+      <img src="images/portada.png" alt="Marconi IT" class="logo-img">
+      <div class="logo-slogan">Prime solutions of tomorrow, delivered with top-notch service and affordability through Artificial Intelligence</div>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="modern-navbar navbar navbar-expand-lg">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="service.html">Operational Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="why.html">Strategic Advantages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Command</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/marconix2010'});return false;">
+              <i class="far fa-calendar-alt"></i> Schedule Briefing
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.flightradar24.com" target="_blank">
+              <i class="fas fa-plane" style="color: var(--accent-orange);"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/es/index.html" class="lang-btn">
+              <img src="images/es-flag.png" alt="ES" style="width: 18px;">
+            </a>
+            <a href="/en/index.html" class="lang-btn">
+              <img src="images/us-flag.png" alt="EN" style="width: 18px;">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Video -->
+  <section class="hero-section">
+    <div class="hero-container-grid">
+      <!-- Text Content -->
+      <div class="hero-content" data-aos="fade-right">
+        <h1 class="hero-title">Cutting-Edge IT & Aerospace Solutions</h1>
+        <p class="hero-subtitle" style="text-align: justify; word-spacing: -2px;">
+          We transform technological visions into reality with the power of AI. From software development and aerospace consulting to solutions in autonomous UAV systems, ISR platforms, and C-UAS systems for defense and security, we have been driving innovation for over a decade.
+        </p>
+        <div class="hero-buttons">
+          <a href="service.html" class="btn-modern">Explore Services</a>
+          <a href="contact.html" class="btn-modern outline">Contact Command</a>
+        </div>
+      </div>
+      
+      <!-- Video Container -->
+      <div class="video-container" data-aos="fade-left" data-aos-delay="200">
+        <video autoplay muted loop playsinline>
+          <source src="videos/brain.mp4" type="video/mp4">
+          Your browser does not support the video element.
+        </video>
+        <div class="video-overlay"></div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Modern Carousel Section -->
+    <section class="modern-carousel">
+        <div class="container">
+            <h2 class="carousel-title" data-aos="fade-up">Our Services in Action</h2>
+            <p class="carousel-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Discover how our technological solutions can transform your operations
+            </p>
+            
+            <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="4"></button>
+                    <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="5"></button>
+                </div>
+                
+                <div class="carousel-inner">
+                    <!-- Slide 1 - Software Development -->
+                    <div class="carousel-item active">
+                        <div class="carousel-card" data-aos="zoom-in">
+                            <video autoplay muted loop playsinline>
+                                <source src="videos/Desarollo.mp4" type="video/mp4">
+                                Your browser does not support the video element.
+                            </video>
+                            <div class="carousel-card-overlay">
+                                <h3>Software Development & IT Support</h3>
+                                <a href="service.html" class="btn-modern">More Information</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 - Drones -->
+                    <div class="carousel-item">
+                        <div class="carousel-card">
+                            <video autoplay muted loop playsinline>
+                                <source src="videos/dron.mp4" type="video/mp4">
+                                Your browser does not support the video element.
+                            </video>
+                            <div class="carousel-card-overlay">
+                                <h3>Defense & Security Tactical FPV, VTOL-UAV, ISR & C-UAS</h3>
+                                <a href="service.html" class="btn-modern">More Information</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3 - Simulators -->
+                    <div class="carousel-item">
+                        <div class="carousel-card">
+                            <video autoplay muted loop playsinline>
+                                <source src="videos/simulacion.mp4" type="video/mp4">
+                                Your browser does not support the video element.
+                            </video>
+                            <div class="carousel-card-overlay">
+                                <h3>Flight Simulators</h3>
+                                <a href="service.html" class="btn-modern">More Information</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 4 - Civil-Military Aviation -->
+                    <div class="carousel-item">
+                        <div class="carousel-card">
+                            <video autoplay muted loop playsinline>
+                                <source src="videos/civilmil.mp4" type="video/mp4">
+                                Your browser does not support the video element.
+                            </video>
+                            <div class="carousel-card-overlay">
+                                <h3>Civil-Military Aviation Consulting</h3>
+                                <a href="service.html" class="btn-modern">More Information</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 5 - Kizeo -->
+                    <div class="carousel-item">
+                        <div class="carousel-card">
+                            <video autoplay muted loop playsinline>
+                                <source src="videos/KIZEO.mp4" type="video/mp4">
+                                Your browser does not support the video element.
+                            </video>
+                            <div class="carousel-card-overlay">
+                                <h3>Kizeo Forms - Digital Solutions</h3>
+                                <a href="https://kizeo-forms.com/es/" class="btn-modern" target="_blank">More Information</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 6 - Graphic Design -->
+                    <div class="carousel-item">
+                        <div class="carousel-card">
+                            <video autoplay muted loop playsinline>
+                                <source src="videos/Graphic.mp4" type="video/mp4">
+                                Your browser does not support the video element.
+                            </video>
+                            <div class="carousel-card-overlay">
+                                <h3>Graphic Design</h3>
+                                <a href="service.html" class="btn-modern">More Information</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Why Choose Us</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        We combine technical expertise with innovation to deliver solutions that drive your operational growth.
+      </p>
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3 class="feature-title">Artificial Intelligence</h3>
+            <p class="feature-description">
+              We implement AI solutions to optimize your processes and improve operational efficiency, reducing costs and maximizing results.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3 class="feature-title">Aerospace Technology</h3>
+            <p class="feature-description">
+              Specialized solutions for the aerospace industry with the highest standards of quality and security.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3 class="feature-title">24/7 Support</h3>
+            <p class="feature-description">
+              Our team is available to provide technical assistance when you need it most, ensuring continuity of your operations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-container" data-aos="fade-up">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="about-content">
+              <h2>About Marconi IT & Aerospace Solutions</h2>
+              <p>
+                We are a company specialized in providing innovative technological solutions in the sectors of software development, information technologies, and aerospace solutions for defense and security sectors. Our approach combines technical expertise with a deep understanding of each client's specific needs.
+              </p>
+              <p>
+                Based in San Salvador, El Salvador, we work with clients nationally and internationally, offering consulting, development, and implementation services of technological solutions tailored to their requirements.
+              </p>
+              <a href="about.html" class="btn-modern">Learn More</a>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="text-center">
+              <img src="images/portada.png" alt="Marconi IT" class="img-fluid" style="max-height: 350px; border-radius: 12px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section class="about-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Our <span>Allies</span></h2>
+      <div class="mt-4" data-aos="zoom-in">
+        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+        <div class="elfsight-app-bd1eef34-046a-4e67-a323-4cd24f77a6c4" data-elfsight-app-lazy></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview Section -->
+  <section class="services-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Areas of Specialization</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        We offer a wide range of technological services designed to meet your operational requirements.
+      </p>
+      <div class="row">
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="service-title">Software Development</h3>
+            <p class="service-description">
+              Creation of custom web and mobile applications using the latest generative AI technologies, low-code techniques, and agile methodologies.
+            </p>
+            <a href="service.html" class="btn-modern outline">View Complete Details</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <h3 class="service-title">Cloud Solutions</h3>
+            <p class="service-description">
+              Migration, implementation and management of cloud infrastructures to optimize your operations and reduce costs.
+            </p>
+            <a href="service.html" class="btn-modern outline">View Complete Details</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-satellite"></i>
+            </div>
+            <h3 class="service-title">Aerospace Technology</h3>
+            <p class="service-description">
+              Specialized solutions for the aerospace industry, including navigation systems, communications, and data analysis with focus on autonomous systems for defense and security sectors.
+            </p>
+            <a href="service.html" class="btn-modern outline">View Complete Details</a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4" data-aos="fade-up">
+        <a href="service.html" class="btn-modern">Explore All Specialized Operational Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="why-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Why Choose Us?</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        Discover the advantages of working with our team of technology experts.
+      </p>
+      <div class="row">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <div class="benefit-details">
+              <h4>Guaranteed Quality</h4>
+              <p>All our projects comply with the highest standards of quality and security.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="benefit-details">
+              <h4>On-Time Delivery</h4>
+              <p>We commit to meeting established deadlines for each project.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="benefit-details">
+              <h4>Expert Team</h4>
+              <p>We have certified professionals with extensive experience in the sector.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-hand-holding-usd"></i>
+            </div>
+            <div class="benefit-details">
+              <h4>Competitive Prices</h4>
+              <p>We offer high-quality solutions at accessible prices for all types of companies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4" data-aos="fade-up">
+        <a href="why.html" class="btn-modern">More Reasons to Choose Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Section - Replaces Testimonials -->
+  <section class="news-section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Technology & Aerospace News</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+        Latest updates in defense technology, civil & military aviation, drone systems, and artificial intelligence
+      </p>
+      <div class="row" id="news-container">
+        <!-- News will be loaded dynamically here -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="news-card">
+            <div class="news-loader">
+              <div class="spinner-border text-light" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <p>Loading technology news...</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="news-card">
+            <div class="news-loader">
+              <div class="spinner-border text-light" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <p>Loading technology news...</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="news-card">
+            <div class="news-loader">
+              <div class="spinner-border text-light" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <p>Loading technology news...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-container" data-aos="zoom-in">
+        <h2 class="cta-title">Ready to Transform Your Operations?</h2>
+        <p class="cta-description">
+          Contact us today for a free consultation and discover how our solutions can drive your company into the future.
+        </p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn-modern">Contact Command</a>
+          <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/marconix2010'});return false;" class="btn-modern outline">Schedule Mission Briefing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="modern-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h4 class="footer-title">About Us</h4>
+          <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.85rem;">
+            We specialize in providing cutting-edge solutions in information technology and aerospace tailored to your needs, always mindful of your budget.
+          </p>
+          <div class="social-links mt-3">
+            <a href="https://www.facebook.com/people/Marconi-It-and-Aerospace-Solutions/61561953869305/" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/TuUsuarioDeTwitter" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/marconi-it-and-aerospace-solutions" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/juanpablox2017/" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-4 mb-4">
+          <h4 class="footer-title">Quick Links</h4>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="service.html" class="footer-link">Operational Services</a>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="why.html" class="footer-link">Why Choose Us</a>
+          <a href="contact.html" class="footer-link">Contact Command</a>
+          <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/marconix2010'});return false;" class="footer-link">Schedule Mission Briefing</a>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h4 class="footer-title">Contact</h4>
+          <div style="color: var(--text-muted); line-height: 2; font-size: 0.85rem;">
+            <p>
+              <i class="fas fa-map-marker-alt" style="color: var(--accent-blue); margin-right: 10px;"></i>
+              <a href="https://www.google.com/maps?q=13.776666765116644,-89.11043486858881" target="_blank" style="color: var(--text-muted); text-decoration: none;">
+                View Location
+              </a>
+            </p>
+            <p>
+              <i class="fab fa-whatsapp" style="color: var(--accent-blue); margin-right: 10px;"></i>
+              <a href="https://wa.me/50360649822" target="_blank" style="color: var(--text-muted); text-decoration: none;">
+                +503 6064-9822
+              </a>
+            </p>
+            <p>
+              <i class="fas fa-envelope" style="color: var(--accent-blue); margin-right: 10px;"></i>
+              <a href="mailto:marconiitaero@outlook.com" style="color: var(--text-muted); text-decoration: none;">
+                marconiitaero@outlook.com
+              </a>
+            </p>
+            <p>
+              <i class="fas fa-clock" style="color: var(--accent-blue); margin-right: 10px;"></i>
+              Mon-Sat: 09:00 - 18:00
+            </p>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h4 class="footer-title">Location</h4>
+          <div style="border-radius: 12px; overflow: hidden; height: 180px;">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.962710385393!2d-89.119303!3d13.7811215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f633988433020d7%3A0x56e97c1c284c9803!2sMarconi%20IT%20Solutions!5e0!3m2!1ses!2ssv!4v1672380912278!5m2!1ses!2ssv" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="displayYear"></span> Marconi IT & Aerospace Solutions. All rights reserved. Designed by <a href="#" style="color: var(--accent-blue); text-decoration: none;">Juan Guzman</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  
+  <!-- CALENDLY SCRIPT -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    <!-- Chatbot -->
+  <script src="//code.tidio.co/mhiuatzylewxjbkmtcdfjsibvjbx0txp.js" async></script>
+  <div class="tidio-chat"></div>
+  
+  <script>
+    // AOS Init
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 100
+    });
+    
+    // Display Year
+    document.getElementById('displayYear').textContent = new Date().getFullYear();
+    
+    // Navbar Scroll Effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.modern-navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Fallback news data ampliada
+    const fallbackNews = [
+      {
+        title: "Advanced AI Systems Transform Military Decision-Making",
+        description: "Artificial intelligence is revolutionizing defense strategies and military operational planning worldwide.",
+        source: "Defense Tech Review",
+        date: "Recent",
+        url: "#",
+        image: "images/ai-military.jpg"
+      },
+      {
+        title: "Commercial Aviation Adopts Sustainable Fuel Technologies",
+        description: "Major airlines invest in eco-friendly aviation fuels and electric propulsion systems for future fleets.",
+        source: "Aviation Weekly",
+        date: "Recent", 
+        url: "#",
+        image: "images/aviation-tech.jpg"
+      },
+      {
+        title: "Next-Generation Military Drones Enhance Surveillance Capabilities",
+        description: "Advanced UAV systems with extended range and AI-powered autonomous operations enter service.",
+        source: "Military Technology",
+        date: "Recent",
+        url: "#",
+        image: "images/military-drones.jpg"
+      },
+      {
+        title: "Civil Aerospace Sector Sees Record Growth in Emerging Markets",
+        description: "New aircraft orders and infrastructure development drive expansion in global aviation markets.",
+        source: "Aerospace International",
+        date: "Recent",
+        url: "#",
+        image: "images/civil-aviation.jpg"
+      },
+      {
+        title: "AI-Powered Cybersecurity Systems Protect Critical Infrastructure",
+        description: "Machine learning algorithms detect and neutralize cyber threats in real-time for defense networks.",
+        source: "Security Technology",
+        date: "Recent",
+        url: "#",
+        image: "images/ai-cybersecurity.jpg"
+      },
+      {
+        title: "Urban Air Mobility Projects Advance with New eVTOL Prototypes",
+        description: "Electric vertical takeoff and landing aircraft demonstrate capabilities for future urban transportation.",
+        source: "Future Transport",
+        date: "Recent",
+        url: "#",
+        image: "images/evtol-tech.jpg"
+      }
+    ];
+
+    async function loadDefenseNews() {
+      const newsContainer = document.getElementById('news-container');
+      
+      try {
+        console.log('Loading technology and aerospace news...');
+        const response = await fetch('/.netlify/functions/news');
+        
+        if (!response.ok) {
+          throw new Error(`HTTP Error: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        console.log('Data received:', data);
+        
+        if (data.articles && data.articles.length > 0) {
+          console.log(`Found ${data.articles.length} articles`);
+          // Show up to 6 articles
+          displayNews(data.articles.slice(0, 6));
+        } else {
+          console.log('No articles found, using fallback');
+          displayNews(fallbackNews);
+        }
+      } catch (error) {
+        console.error('Error loading news:', error);
+        console.log('Using backup news');
+        displayNews(fallbackNews);
+      }
+    }
+
+    function displayNews(articles) {
+      const newsContainer = document.getElementById('news-container');
+      newsContainer.innerHTML = '';
+      
+      console.log('Showing articles:', articles.length);
+      
+      // Ensure we have 6 cards (2 rows of 3)
+      const articlesToShow = articles.slice(0, 6);
+      
+      articlesToShow.forEach((article, index) => {
+        // Determine category based on content
+        const category = determineCategory(article);
+        
+        const title = article.title || 'Title not available';
+        const description = article.description || 'Latest developments in technology and aerospace solutions.';
+        const source = article.source?.name || article.source || 'Unknown source';
+        const date = formatDate(article.publishedAt);
+        const image = article.urlToImage || 'images/default-news.jpg';
+        const url = article.url || '#';
+        
+        const newsCard = `
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="${(index % 3) * 100}">
+            <a href="${url}" target="_blank" class="news-link">
+              <div class="news-card">
+                <div class="news-image-container">
+                  ${article.urlToImage ? 
+                    `<img src="${image}" alt="${title}" class="news-image" onerror="this.style.display='none'">` : 
+                    '<i class="fas fa-newspaper" style="font-size: 2.5rem; color: #666;"></i>'
+                  }
+                </div>
+                <span class="news-category" style="background: ${getCategoryColor(category)}">${category}</span>
+                <h5 class="news-title">${title}</h5>
+                <p class="news-description">${description.length > 120 ? description.substring(0, 120) + '...' : description}</p>
+                <div class="news-source">
+                  <span class="source-name">${source}</span>
+                  <span class="news-date">${date}</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        `;
+        newsContainer.innerHTML += newsCard;
+      });
+    }
+
+    // Function to determine category based on content
+    function determineCategory(article) {
+      const title = article.title?.toLowerCase() || '';
+      const description = article.description?.toLowerCase() || '';
+      const content = title + ' ' + description;
+      
+      if (content.includes('drone') || content.includes('uav') || content.includes('quadcopter')) {
+        return 'Drones';
+      } else if (content.includes('artificial intelligence') || content.includes('ai ') || content.includes('machine learning')) {
+        return 'AI Technology';
+      } else if (content.includes('military') || content.includes('defense') || content.includes('army') || content.includes('navy')) {
+        return 'Defense Tech';
+      } else if (content.includes('aviation') || content.includes('aircraft') || content.includes('airline') || content.includes('pilot')) {
+        return 'Aviation';
+      } else if (content.includes('aerospace') || content.includes('space') || content.includes('satellite')) {
+        return 'Aerospace';
+      } else {
+        return 'Technology';
+      }
+    }
+
+    // Function for category colors
+    function getCategoryColor(category) {
+      const colors = {
+        'Drones': '#00d4ff',
+        'AI Technology': '#ff6b35', 
+        'Defense Tech': '#ff4757',
+        'Aviation': '#2ed573',
+        'Aerospace': '#3742fa',
+        'Technology': '#a4b0be'
+      };
+      return colors[category] || '#00d4ff';
+    }
+
+    function formatDate(dateString) {
+      if (!dateString) return 'Recent';
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'short', 
+        day: 'numeric' 
+      });
+    }
+
+    // Load news when page loads
+    document.addEventListener('DOMContentLoaded', loadDefenseNews);
+  </script>
+  <!-- Disable right-click context menu -->
+<script>
+  (function() {
+    document.addEventListener('contextmenu', function(event) {
+      event.preventDefault();
+    });
+  })();
+</script>
+<!-- Disable F12 Key -->
+<script>
+  (function() {
+    document.addEventListener('keydown', function(event) {
+      if (event.keyCode === 123) { // F12
+        event.preventDefault();
+      }
+    });
+  })();
+</script>
+<!-- Disable Specific Key Combinations -->
+<script>
+  (function() {
+    document.addEventListener('keydown', function(event) {
+      // Check for Ctrl+Shift+I (F12 for tools)
+      if (event.ctrlKey && event.shiftKey && event.keyCode === 73) { // 73 is the keyCode for 'I'
+        event.preventDefault();
+      }
+      
+      // Check for Ctrl+U (View Source)
+      if (event.ctrlKey && event.keyCode === 85) { // 85 is the keyCode for 'U'
+        event.preventDefault();
+      }
+
+      // Check for Ctrl+Shift+J (Console)
+      if (event.ctrlKey && event.shiftKey && event.keyCode === 74) { // 74 is the keyCode for 'J'
+        event.preventDefault();
+      }
+    });
+  })();
+</script>
+<!-- Disable Ctrl+C -->
+<script>
+  (function() {
+    document.addEventListener('keydown', function(event) {
+      // Check for Ctrl+C (Copy)
+      if (event.ctrlKey && event.keyCode === 67) { // 67 is the keyCode for 'C'
+        event.preventDefault();
+      }
+    });
+  })();
+</script>
+</body>
+</html>
